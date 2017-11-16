@@ -1,0 +1,114 @@
+@import "colors";
+
+.input-group {
+  // [id^=filterrific] {
+  //   border-right: 0px;
+  // }
+  .input-group-addon {
+    padding: 6px 5px 1px 5px;
+    border-left: 0px;
+    background: white;
+    color: #ccc;
+  }
+}
+.clear-input {
+  cursor: pointer;
+}
+
+div[data-react-class=Grid] {
+  margin-top: -12px;
+}
+
+#filterrificInfo {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+#advancedModal {
+  .modal-content {
+    border-radius: 0px;
+  }
+}
+
+.carousel-item {
+  height: 352px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.7);
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.carousel-image {
+  width: 100%;
+}
+
+.turbolinks-progress-bar {
+  background: $paideia-orange;
+}
+
+.filterrific_spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  min-height: 100px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  padding-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	font-family: 'Optima';
+  background-image: image-url('xv.png');
+  background-color: $background-grey;
+  background-attachment: fixed;
+  margin-bottom: 30px;
+
+}
+
+.pagination {
+	margin: 0;
+	display: inline-block;
+}
+
+#filterrific_container {
+  width: 100%;
+  background-color: $paideia-light-grey;
+  margin: 1rem 0;
+}
+
+div.card-columns {
+  column-gap: 1rem !important;
+}
+
+.pagination-custom {
+  margin-top: 8px !important;
+}
+
+.pagination-button {
+  color: $paideia-orange !important;
+  display: inline-block;
+}
+
+.mini {
+  max-width: 24px;
+}

@@ -1,0 +1,32 @@
+<% content_for :search_bar do %>
+  <%= render 'layouts/search_bar' %>
+<% end %>
+<div class="grid-hook">
+  <%= react_component 'Carousel',
+    articles: @featured_articles
+  %>
+</div>
+
+<%= render 'pagination', top: true %>
+
+<span class="filterrific_spinner" style="display: none">
+  <img class="loader" src="<%= asset_path 'ellipsis.gif' %>" />
+</span>
+
+<div class="container grid-hook">
+  <%= react_component 'Grid',
+    {articles: @articles,
+    numArticles: @all_articles.length,
+    query: @query},
+    {prerender: true}
+  %>
+</div>
+
+<%= render 'pagination', top: false %>
+<script>
+$('#currentFilters').text("<%= @current_filters %>")
+$('#entriesInfo').text("<%= @page_entries_info %>")
+  nav_height = $('nav').outerHeight()
+  $('#nav-neg-space').css({'height': nav_height + 13 + 'px'})
+  ReactRailsUJS.mountComponents('.grid-hook')
+</script>

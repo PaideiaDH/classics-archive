@@ -1,0 +1,4 @@
+<% ['book reviews', 'archaeological finds', 'Trump and the Ancient World', 'Julius Caesar', 'feminism', 'maternity', 'the body', 'sex', 'gender', 'sexual assault', 'marriage', 'economy', 'rhetoric', 'language learning'].each_with_index do |tag| %>
+  <%= f.label :tag_list, tag %>
+  <%= f.check_box :tag_list, { :multiple => true }, tag %>
+<% end %>

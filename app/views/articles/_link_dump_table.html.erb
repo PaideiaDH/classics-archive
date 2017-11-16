@@ -1,0 +1,37 @@
+<table class="table table-striped" id="<%= id %>">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Archived</th>
+      <th>Source</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% articles.each do |a| %>
+      <tr>
+        <td>
+          <%= a.title %>
+          <a href="<%= a.url %>" target="_blank">
+            <i class='fa fa-external-link'></i>
+          </a>
+        </td>
+        <td>
+          <%= a.created_at.strftime("%e %B %Y") %>
+        </td>
+        <td>
+          <%= a.submission_route %>
+        </td>
+        <td>
+          <%= link_to new_article_path(user_url: a.url, ldid: a.id), class: 'text-success' do %>
+            <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+          <% end %>
+          &nbsp
+          <%= link_to dumped_links_reject_path(id: a.id), class: 'text-danger' do %>
+            <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,112 @@
+<%= form_for @article, multipart: true do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div class="form-group row">
+          <%= f.label :title, required: true, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.text_area :title, value: @parsed[:title], required: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :author_first_name, "Author", required: true, class: "col-3 col-form-label" %>
+          <div class="col-4">
+            <%= f.text_field :author_first_name, value: @parsed[:author_first_name], required: true, class: "form-control" %>
+          </div>
+          <div class="col-5">
+            <%= f.text_field :author_last_name, value: @parsed[:author_last_name], required: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :type_of, required: true, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.select :type_of,
+                         CONTENT_TYPES,
+                         {},
+                         value: @parsed[:type_of],
+                         required: true,
+                         class: "form-control",
+                         prompt: "Content Type"
+            %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :description, required: true, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.text_area :description, value: @parsed[:description], required: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :site_name, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.text_field :site_name, value: @parsed[:site_name], class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :url, required: true, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.url_field :url, value: @parsed[:url], required: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :published_time, required: true, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <% if @parsed[:published_time] %>
+            <%= f.text_field :published_time, value: @parsed[:published_time], required: true, class: "form-control" %>
+            <% else %>
+            <%= f.date_field :published_time, required: true, class: "form-control" %>
+            <% end %>
+          </div>
+        </div>
+        <div id="invisible" data-anytags="<%= @parsed[:tags].join(',') unless @parsed[:tags].nil? %>"></div>
+        <div class="form-group row">
+          <%= render 'tags_tooltip', f: f %>
+          <div class="col-9">
+            <div class="row">
+              <%= f.select :tag_list, TAG_RECS, { include_blank: false }, { class: "js-example-tags form-control", multiple: "multiple" } %>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :image, class: "col-3 col-form-label" %>
+          <div class="col-9">
+            <%= f.text_field :image, value: @parsed[:image], class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-12">
+            <img src="<%= @parsed[:image] %>" style="max-width: 100%;"/>
+          </div>
+        </div>
+        <%= f.hidden_field :image_credit, value: @parsed[:image_credit] %>
+        <%= f.hidden_field :boilerpipe_text, value: @parsed[:boilerpipe_text] %>
+        <%= f.hidden_field :site_text, value: @parsed[:site_text] %>
+        <%= f.hidden_field :approved, value: false %>
+        <%= f.hidden_field :calais_tags, value: @parsed[:tags].join(',') %>
+        <!-- NEEDS LOGIC FOR DISCERNING BTWN ADMIN AND NON ADMIN -->
+        <% if current_user %>
+          <%= f.hidden_field :submitted_by, value: current_user.id %>
+        <% end %>
+        <%= f.submit "Submit Article for Review", class: "btn btn-submit" %>
+    </div>
+    <% end %>
+    <div class="col-md-6 col-sm-12">
+      <a class="h6" href="<%= @parsed[:url] %>" style="width: 100%;">
+        <%= @parsed[:url] %>
+      </a>
+      <iframe class="embed-responsive-item" src="<%= @parsed[:url] %>">
+        Site at <%= @parsed[:url] %>
+      </iframe>
+    </div>
+  </div>
+</div>
+<script>
+var k = $('#invisible').data('anytags')
+
+$(".js-example-tags").select2({
+  tags: true,
+  theme: "bootstrap",
+  data: createDataArray(k)
+})
+
+</script>

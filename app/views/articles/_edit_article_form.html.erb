@@ -1,0 +1,111 @@
+<%= form_for @article, html: { multipart: true } do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="form-group row">
+        <%= f.label :title, required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.text_area :title, required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row feature">
+        <label class="col-3 col-form-label">
+          Feature?
+        </label>
+        <div class="col-9 form-inline">
+          <%= f.check_box :featured, {}, "true", "false" %>
+          <label for="article_featured"></label>
+          <%= f.date_field :featured_date, value: Date.today.to_s, class: 'form-control', style: 'display:none' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :author_first_name, "Author", required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.text_field :author_first_name, required: true, class: "form-control" %>
+          <%= f.text_field :author_last_name, required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :type_of, required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.select :type_of,
+                       CONTENT_TYPES,
+                       {},
+                       required: true,
+                       class: "form-control",
+                       prompt: "Content Type"
+          %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :description, required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.text_area :description, required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :site_name, "Site", class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.text_field :site_name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :url, required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.url_field :url, required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :published_time, "Date Published", required: true, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.date_field :published_time, required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div id="invisible" data-anytags="<%= @article.tag_list.join(',') %>"></div>
+      <div class="form-group row">
+        <%= render 'tags_tooltip', f: f %>
+        <div class="col-9">
+          <%= f.select :tag_list, TAG_RECS, {include_blank: false}, {class: "js-example-tags form-control", multiple: "multiple"} %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :image, class: "col-3 col-form-label" %>
+        <div class="col-9">
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-12">
+          <img src="<%= @article.image.url(:card_top) %>" style="max-width: 100%;"/>
+        </div>
+      </div>
+      <br />
+      <%= f.hidden_field :image_credit, value: 'n/a' %>
+      <%= f.hidden_field :boilerpipe_text, value: @article.boilerpipe_text %>
+      <%= f.hidden_field :approved, value: true %>
+      <%= f.hidden_field :approved_by, value: current_user.id %>
+      <%= f.hidden_field :site_text %>
+      <%= f.submit "Add Article to Feed", class: "btn btn-submit" %>
+      <% end %>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <a class="h6" href="<%= @article.url %>" style="width: 100%;">
+        <%= @article.url %>
+      </a>
+      <iframe class="embed-responsive-item" src="<%= @article.url %>">
+        Site at <%= @article.url %>
+      </iframe>
+    </div>
+  </div>
+</div>
+<script>
+var k = $('#invisible').data('anytags')
+$(".js-example-tags").select2({
+  tags: true,
+  theme: "bootstrap",
+  data: createDataArray(k)
+})
+$('#article_featured').change(function() {
+  $('#article_featured_date').toggle(this.checked)
+})
+</script>

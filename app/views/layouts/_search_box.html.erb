@@ -1,0 +1,25 @@
+<div id="allTerms" data-allterms="<%= Article.terms.join(',') %>"></div>
+<div class="form-group">
+  <input class="mr-0" placeholder="Full-text search" type="text" name="filterrific[with_query]" id="filterrific_with_query" aria-describedby="advanced">
+  <small id="advanced" class="form-text text-muted" data-toggle="modal" data-target="#advancedModal">
+    Advanced <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </small>
+</div>
+
+
+<script>
+$(function() {
+  var focused = false;
+  var terms = $('#allTerms').data('allterms').split(',')
+
+  $('#filterrific_with_query')
+  .autocomplete({
+    source: terms,
+    minLength: 0,
+    close: function(e, ui) {
+      $(this).blur()
+    }
+  })
+
+})
+</script>

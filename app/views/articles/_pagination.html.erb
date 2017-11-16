@@ -1,0 +1,38 @@
+<div class="pagination-custom" id="filterrificInfo">
+  <!-- PREVIOUS BUTTON -->
+  <% if @p > 1 %>
+    <a href="/articles?<%= @query %>&page=<%= @p - 1 %>" class="pagination-button">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      Previous
+    </a>
+    &nbsp
+  <% else %>
+
+  <% end %>
+
+  <!-- CONTENT BETWEEN BUTTONS -->
+  <% if top %>
+    <b id="entriesInfo">
+      <%= @page_entries_info %>
+    </b>
+    <div id="currentFilters" style="display:inline">
+      <%= @current_filters %>
+    </div>
+  <% else %>
+    <% if @p * 15 < @all_articles.length || @p > 1 %>
+      <img src="<%= asset_path 'square_owl' %>" class="mini"/>
+    <% end %>
+  <% end %>
+
+  <!-- NEXT BUTTON -->
+  <% if @p * 15 < @all_articles.length %>
+    &nbsp
+    <a href="/articles?<%= @query %>&page=<%= @p + 1 %>" class="pagination-button">
+      Next
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  <% else %>
+
+  <% end %>
+
+</div>

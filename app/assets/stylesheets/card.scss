@@ -1,0 +1,190 @@
+@import 'colors';
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid $paideia-orange;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: $paideia-light-orange;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+.card {
+  background-color: $paideia-light-grey;
+  max-width: 100%;
+  border: 1px solid #E2E2E2 !important;
+  border-radius: 0px !important;
+  margin: auto;
+  position: relative;
+  i.fa-external-link {
+    color: $paideia-light-grey;
+  }
+}
+
+.edit-icon {
+  display: none;
+}
+
+.full-card:hover {
+  // background-color: white;
+  // width: 110%;
+  // height: 110%;
+  // box-shadow: 0 0 24px #BFBFBF;
+  i.fa-external-link {
+    color: $paideia-orange;
+  }
+}
+
+div.tag-wrap {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+label.author, .site_name {
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+a.published_time {
+  cursor: default;
+}
+hr {
+  margin: 4px 0px !important;
+  border-color: $background-grey !important;
+}
+
+label.author {
+  font-size: 1rem !important;
+  margin-bottom: 0px !important;
+}
+
+label.site_name {
+  margin-bottom: 0px !important;
+}
+
+p.card-text {
+  font-size: 0.875rem !important;
+}
+
+.card-img-top {
+	max-width: 100%;
+  border-radius: 0px !important;
+}
+
+.link-body {
+	text-decoration: none;
+	color: black;
+  cursor: alias;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.card-title {
+  margin-bottom: 0px !important;
+  // color: $paideia-dark-blue;
+  // &:hover {
+  //   color: $paideia-blue;
+  // }
+}
+
+h5.link-body, a {
+	color: $paideia-blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+label.btn-secondary, .tag {
+	background-color: white;
+	border: 0.5px solid $paideia-blue;
+	color: $paideia-blue;
+	margin-bottom: 3px;
+	&:hover {
+		cursor: pointer;
+		background-color: $paideia-blue;
+    border: 0.5px solid $paideia-blue;
+		color: white;
+	}
+  &:active {
+    background-color: $paideia-orange;
+    border: 0.5px solid $paideia-orange;
+    color: white;
+  }
+}
+
+.tag.btn-sm {
+  padding: 0px 3px 1px 3px !important;
+  max-height: 21px;
+}
+
+.card-header {
+  padding: 8px!important;
+  border-bottom: none !important;
+}
+
+.card-block {
+  padding: 8px 8px 8px 5px !important;
+}
+
+.card-footer {
+  padding: 0px 8px 8px 8px !important;
+  background-color: inherit;
+  color: gray;
+	border-top: none;
+  font-size: 14px;
+}

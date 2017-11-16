@@ -1,0 +1,37 @@
+<a class="navbar-brand" href="/articles?filterrific%5Breset_filterrific%5D=true" title="@onlinepublicclassicsarchive">
+  <img src="<%= asset_path 'owl' %>" class="icon"/>
+</a>
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="/about">
+      About
+    </a>
+  </li>
+  <% if current_page? articles_manage_path %>
+    <li class="nav-item">
+      <a href="/signout" id="sign_in" class="nav-link">
+        Sign Out
+      </a>
+    </li>
+  <% else %>
+    <% if current_user && current_user.admin? %>
+      <li class="nav-item">
+        <a href="/articles/manage" id="sign_in" class="nav-link">
+          Manage Articles
+        </a>
+      </li>
+    <% elsif current_user %>
+      <li class="nav-item">
+        <a href="/articles/manage" id="sign_in" class="nav-link">
+          Contribute
+        </a>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <a href="/auth/google_oauth2" id="sign_in" class="nav-link">
+          Contribute
+        </a>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

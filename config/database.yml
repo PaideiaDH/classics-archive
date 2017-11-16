@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: classics-archive_development
+  pool: 5
+  username:
+  password:
+
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: classics-archive_test
+  pool: 5
+  username: paideia
+  password: <%= ENV['OPCA_POSTGRES_PASSWORD'] %>
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: classics-archive_production
+  pool: 5
+  username: paideia
+  password: <%= ENV['OPCA_POSTGRES_PASSWORD'] %>

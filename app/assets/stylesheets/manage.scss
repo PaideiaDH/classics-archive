@@ -1,0 +1,27 @@
+#newArticle {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a[href="#linkDump"] {
+  color: #DC3545;
+  &.active {
+    color: white !important;
+    background-color: #DC3545 !important;
+  }
+}
+a[href="#needApproval"] {
+  color: #FFC107;
+  &.active {
+    color: white !important;
+    background-color: #FFC107 !important;
+  }
+}
+a[href="#approved"] {
+  color: #28A745;
+  &.active {
+    color: white !important;
+    background-color: #28A745 !important;
+  }
+}

@@ -1,0 +1,53 @@
+<div class="container">
+  <br />
+  <%= form_tag new_article_path, method: "get", class: "form-inline" do %>
+    <div class="input-group" id='newArticle'>
+      <%= text_field_tag :user_url, "", class: "form-control", placeholder: "enter url here...", type: "url" %>
+      <span class="input-group-btn">
+        <%= submit_tag "Add Article", class: "btn btn-primary" %>
+      </span>
+    </div>
+  <% end %>
+  <% if @current_user.admin? %>
+    <br />
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#linkDump" role="tab">
+          Incoming
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#needApproval" role="tab">
+          Need Approval
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#approved" role="tab">
+          Approved
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="linkDump" role="tabpanel">
+        <%= render 'articles/link_dump_table', articles: @dumped_links, id: 'dumpedLinks' %>
+      </div>
+      <div class="tab-pane" id="needApproval" role="tabpanel">
+        <%= render 'articles/management_table', articles: @need_approval, id: 'allUnapproved' %>
+      </div>
+      <div class="tab-pane" id="approved" role="tabpanel">
+        <%= render 'articles/management_table', articles: @approved_articles, id: 'allApproved' %>
+      </div>
+      <div class="tab-pane" id="linkDump" role="tabpanel">
+        ...
+      </div>
+    </div>
+    <br />
+    <script>
+    $(document).ready(function() {
+      $('#allApproved').DataTable();
+      $('#allUnapproved').DataTable();
+      $('#dumpedLinks').DataTable();
+    });
+    </script>
+  <% end %>
+</div>

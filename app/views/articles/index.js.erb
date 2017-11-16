@@ -1,0 +1,12 @@
+<% js = escape_javascript(
+  render(
+    partial: 'articles/list',
+    locals: {
+      articles: @articles,
+      current_filters: @current_filters,
+      featured_articles: @featured_articles,
+      sorted: @sorted
+    }
+  )
+) %>
+$("#filterrific_results").html("<%= js %>");

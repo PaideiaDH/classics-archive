@@ -1,0 +1,68 @@
+@import "colors";
+
+button.close.nav-close {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  &:focus {
+    outline: none;
+  }
+}
+
+#navModal .modal-dialog {
+  position: fixed;
+  width: 280px;
+  height: 100%;
+	margin: auto;
+  font-size: 20px;
+	-webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+	-o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+	-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+	-moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+	-o-transition: opacity 0.3s linear, left 0.3s ease-out;
+	transition: opacity 0.3s linear, left 0.3s ease-out;
+  .modal-content {
+    height: 100%;
+		overflow-y: auto;
+    border-radius: 0px;
+    color: white;
+    border: none;
+    background: $paideia-dark-blue;
+    background: -webkit-linear-gradient(left top, #d25630, #d2a730);
+    background: -o-linear-gradient(bottom right, #d25630, #d2a730);
+    background: -moz-linear-gradient(bottom right, #d25630, #d2a730);
+    background: linear-gradient(to bottom right, #d25630, #d2a730);
+    a.nav-link {
+      color: white;
+    }
+    .modal-body {
+      padding: 8px;
+    }
+  }
+}
+
+#navbarNav {
+  background: $paideia-orange;
+  font-size: 24px;
+  z-index: 99999999999;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 300px;
+}
+
+#navToggle {
+  background: white;
+  border: none;
+  color: $paideia-orange;
+  margin-left: 8px;
+  margin-top: 4px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.navList {
+  list-style: none;
+}
