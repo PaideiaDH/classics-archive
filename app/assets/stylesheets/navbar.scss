@@ -1,5 +1,14 @@
 @import 'colors';
 
+#development, #about, #manage, #sign_in, #sign_out {
+  i {
+    color: white;
+  }
+  &:hover i{
+    color: $paideia-orange;
+  }
+}
+
 #reset {
   position: absolute;
   right: 12px;

@@ -35,4 +35,6 @@ Tweet content links to us at [@PublicClassics](https://twitter.com/PublicClassic
 
 [Share articles with our editorial staff](https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=415150494328-2k2h1o47fql3vh79s3a8ennakbfopqtk.apps.googleusercontent.com&as=-75f34e5f064627b0&destination=http%3A%2F%2Fopca.paideiainstitute.org&approval_state=!ChRDV3JaVk85WmIzWFo5TVkteERMORIfRTVxdWR6SFlEc3NWb1Bud0gtVkU1UUdtam5sRV9CVQ%E2%88%99AHw7d_cAAAAAWg6zs7aGXoVfqF83z_VE57aNioT3GaqG&xsrfsig=AHgIfE_uzUtLEmzk60SDRs6ICdRh-uQRfg&flowName=GeneralOAuthFlow).
 
+[Suggest features and track bugs](http://104.130.11.126:8080/servicedesk/customer/portal/1) through our Jira Service Desk.
+
 Article metadata shared for scholarship and research purposes under [Fair Use](https://www.copyright.gov/fair-use/more-info.html).

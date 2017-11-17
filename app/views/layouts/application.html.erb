@@ -20,9 +20,7 @@
 <body>
   <%= yield :filterrific_form %>
     <nav class="navbar fixed-top navbar-expand-lg">
-      <% unless current_page? about_path %>
-        <%= render 'layouts/navigation' %>
-      <% end %>
+      <%= render 'layouts/navigation' %>
       <div class="mr-0">
         <%= yield :search_bar %>
       </div>

@@ -76,3 +76,10 @@ input, button, select, optgroup, textarea {
     display: none;
   }
 }
+
+.orange {
+  background-color: $paideia-blue;
+  &:hover {
+    background-color: $paideia-orange;
+  }
+}
