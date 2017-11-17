@@ -1,0 +1,2 @@
+class RSSFeed < ApplicationRecord
+end

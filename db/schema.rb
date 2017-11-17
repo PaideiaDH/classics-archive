@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107072023) do
+ActiveRecord::Schema.define(version: 20171117223118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 20171107072023) do
     t.string "title", null: false
     t.boolean "rejected"
     t.index ["title"], name: "index_dumped_links_on_title"
+  end
+
+  create_table "rss_feeds", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "feed_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
