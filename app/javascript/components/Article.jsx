@@ -39,6 +39,8 @@ export default class Article extends React.Component {
               <b>
                 {article.author_first_name} {article.author_last_name}
               </b>
+              {' '}
+              <i className="fa fa-user-circle author" aria-hidden="true"></i>
             </label>
             <p className="card-text link-body">
               <a href={article.url} className="link-body" target="_blank">
@@ -65,6 +67,8 @@ export default class Article extends React.Component {
               {article.pretty_date}
             </a>
             <label className="site_name pull-right">
+              <i className="fa fa-newspaper-o site_name" aria-hidden="true"></i>
+              {' '}
               <input
                 className="link-body"
                 type="radio"

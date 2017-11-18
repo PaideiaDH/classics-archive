@@ -1,17 +1,18 @@
 <div class="container">
-  <br />
   <%= form_tag new_article_path, method: "get", class: "form-inline" do %>
     <div class="input-group" id='newArticle'>
-      <%= text_field_tag :user_url, "", class: "form-control", placeholder: "enter url here...", type: "url" %>
+      <%= text_field_tag :user_url, "", class: "form-control form-control-lg", placeholder: "enter url here...", type: "url" %>
       <span class="input-group-btn">
-        <%= submit_tag "Add Article", class: "btn btn-primary orange" %>
+        <%= submit_tag "Add Article", class: "btn btn-primary btn-lg orange" %>
       </span>
     </div>
   <% end %>
-  <% if @current_user.admin? %>
+</div>
+<% if @current_user.admin? %>
+  <hr id="managementBreak" />
+  <div class="container">
     <div class="row">
       <div class="col-2">
-        <br>
         <div class="nav flex-column nav-pills" id="managementTabs" role="tablist" aria-orientation="vertical">
           <a class="nav-link active" id="articles-tab" data-toggle="pill" href="#manageArticles" role="tab" aria-controls="article" aria-selected="true">
             Articles
@@ -42,5 +43,5 @@
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

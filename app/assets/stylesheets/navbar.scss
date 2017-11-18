@@ -77,7 +77,6 @@ nav.navbar {
   background-color: white;
   padding: 0px;
   min-height: 62px;
-  font-family: 'Optima';
   -webkit-box-shadow: 0 8px 8px -8px $paideia-blue;
   -moz-box-shadow: 0 8px 8px -8px $paideia-blue;
   box-shadow: 0 8px 8px -8px $paideia-blue;
@@ -134,23 +133,23 @@ span#select2-filterrific_with_tag-container {
   border: 1px solid $paideia-blue !important;
   padding: 4px 8px !important;
   border-radius: 0.2rem !important;
-  font-family: 'Optima' !important;
-  font-size: 0.875rem !important;
+  font-family: 'Aileron' !important;
+  font-size: 1.25rem !important;
   line-height: 1.25 !important;
 }
 
 // select2 line height
 .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, span.select2-selection.select2-selection--multiple, span.select2-selection.select2-selection--single {
-  min-height: 38px !important;
+  min-height: 48px !important;
 }
 
 .select2-selection.select2-selection--multiple {
-  font-size: 1rem !important;
+  font-size: 1.25rem !important;
 }
 
 span.select2-selection__placeholder {
   color: $bootstrap-placeholder-grey !important;
-  font-size: 1rem !important;
+  font-size: 1.25rem !important;
 }
 
 .navbar-toggler {
@@ -193,9 +192,9 @@ span.filterrific_spinner img {
 }
 
 .ui-widget {
-	font-family: 'Optima' !important;
+	font-family: 'Aileron' !important;
 }
 
 button[class^="ui-priority-"] {
-  font-family: 'Optima' !important;
+  font-family: 'Aileron' !important;
 }

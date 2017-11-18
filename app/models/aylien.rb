@@ -1,36 +1,34 @@
 # professional article scraping
+require 'faraday'
 
 module Aylien
   include AuthorName
   include Calais
   include Description
   include FindTags
-  include HTTParty
   include Publisher
   include TimePublished
 
   def aylien_creator(url)
-    response = HTTParty.get(
-      'https://api.aylien.com/api/v1/extract',
-      headers: {
-        'X-AYLIEN-TextAPI-Application-Key' => ENV['AYLIEN_KEY'],
-        'X-AYLIEN-TextAPI-Application-ID' => ENV['AYLIEN_ID']
-      },
-      query: {
+    conn = Faraday.new(url: 'https://api.aylien.com')
+    response = conn.get '/api/v1/extract' do |req|
+      req.headers['X-AYLIEN-TextAPI-Application-Key'] = ENV['AYLIEN_KEY']
+      req.headers['X-AYLIEN-TextAPI-Application-ID'] = ENV['AYLIEN_ID']
+      req.params = {
         url: url,
         best_image: true
       }
-    )
-    response.parsed_response
+    end
+    response.body
   end
 
   def get_html(url)
-    page = HTTParty.get(url)
-    Nokogiri::HTML(page)
+    page = Faraday.get(url)
+    Nokogiri::HTML(page.body)
   end
 
   def article_info(url)
-    page_json = aylien_creator(url)
+    page_json = JSON.parse(aylien_creator(url))
     page_html = get_html(url)
 
     scraped_tags = find_tags(page_html)

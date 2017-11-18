@@ -60,6 +60,7 @@
   color: #777;
 }
 
+
 .card {
   background-color: $paideia-light-grey;
   max-width: 100%;
@@ -67,8 +68,11 @@
   border-radius: 0px !important;
   margin: auto;
   position: relative;
-  i.fa-external-link {
+  i.site_name {
     color: $paideia-light-grey;
+  }
+  i.fa-external-link, i.author {
+    color: #F7F7F7;
   }
 }
 
@@ -76,11 +80,7 @@
   display: none;
 }
 
-.full-card:hover {
-  // background-color: white;
-  // width: 110%;
-  // height: 110%;
-  // box-shadow: 0 0 24px #BFBFBF;
+.card-header:hover, .card-img-top:hover {
   i.fa-external-link {
     color: $paideia-orange;
   }
@@ -98,6 +98,19 @@ label.author, .site_name {
     text-decoration: none;
   }
 }
+
+label.author:hover {
+  i.author {
+    color: $paideia-orange;
+  }
+}
+
+.site_name:hover {
+  i.site_name {
+    color: $paideia-orange;
+  }
+}
+
 a.published_time {
   cursor: default;
 }
@@ -122,6 +135,7 @@ p.card-text {
 .card-img-top {
 	max-width: 100%;
   border-radius: 0px !important;
+  border-bottom: 2px solid $paideia-orange;
 }
 
 .link-body {

@@ -2,21 +2,16 @@
 
 #filterrific_with_query {
   position: absolute;
-  right: 0px;
-  background-image: url(search.png);
-  background-position: 0px 0px 2px 0px;
-  background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  padding: 2px 10px 2px 40px;
   width: 400px;
-	-moz-transition: all 0.2s linear;
-	transition: all 0.2s linear;
 	border: none;
 	border-bottom: 1.5px solid white;
   outline: none;
   border-bottom: 1.5px solid $paideia-orange;
   right: 12px;
+}
+
+#advancedModal {
+  .modal-content {
+    border-radius: 0px;
+  }
 }

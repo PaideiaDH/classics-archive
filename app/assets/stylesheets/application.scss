@@ -26,7 +26,7 @@
   * attribute and a focus state
   */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300');
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Poppins:200,300,400,500,600');
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'bootstrap';
@@ -39,13 +39,43 @@
 @import 'search';
 
 @font-face {
-font-family: 'Optima';
-src: font-url('optima-roman-webfont.eot');
-src: font-url('optima-roman-webfont.eot') format('embedded-opentype'),
-     font-url('optima-roman-webfont.woff2') format('woff2'),
-     font-url('optima-roman-webfont.woff') format('woff'),
-     font-url('optima-roman-webfont.ttf') format('truetype'),
-     font-url('optima-roman-webfont.svg#OptimaRoman') format('svg');
+  font-family: 'Aileron';
+  src: font-url('Aileron/Aileron-Light.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: font-url('Aileron/Aileron-UltraLight.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: font-url('Aileron/Aileron-Thin.ttf') format('truetype');
+  font-weight: 200;
+}
+
+
+@font-face {
+  font-family: 'Aileron';
+  src: font-url('Aileron/Aileron-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: font-url('Aileron/Aileron-Bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+body {
+	font-family: 'Aileron';
+  font-weight: 200;
+  background-image: image-url('xv.png');
+  background-color: $background-grey;
+  background-attachment: fixed;
+  margin-bottom: 30px;
 }
 
 td {
@@ -53,7 +83,7 @@ td {
 }
 
 input, button, select, optgroup, textarea {
-	font-family: 'Optima';
+	font-family: 'Aileron';
 }
 
 .top-bar {

@@ -3,64 +3,64 @@
 <div id="contentTypes" data-contenttypes="<%= CONTENT_TYPES.join(',') %>"></div>
 
 <div class="modal fade" id="advancedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
+        <h4 class="modal-title" id="exampleModalLabel" aria-describedby="advancedReset">
           Advanced Search
-        </h5>
+        </h4>
+        &nbsp;
+        <a href="/articles?filterrific%5Breset_filterrific%5D=true" id="advancedReset" class="form-text text-muted">
+          Reset Filters
+        </a>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="filterrific_sorted_by">
+        <div class="form-group row">
+          <label for="filterrific_sorted_by" class="col-sm-3 col-form-label col-form-label-lg">
             Sorted by
           </label>
-          <select class="filterrific-periodically-observed form-control" name="filterrific[sorted_by]" id="filterrific_sorted_by">
-            <% Article.options_for_sorted_by.each do |option| %>
+          <div class="col-sm-9">
+            <select class="filterrific-periodically-observed form-control form-control-lg" name="filterrific[sorted_by]" id="filterrific_sorted_by">
+              <% Article.options_for_sorted_by.each do |option| %>
               <option value="<%= option[1] %>" <%= @sorted == option[1] ? 'selected' : '' %>>
                 <%= option[0] %>
               </option>
-            <% end %>
-          </select>
+              <% end %>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="filterrific_published_by">
+        <div class="form-group row">
+          <label for="filterrific_published_by" class="col-sm-3 col-form-label col-form-label-lg">
             Date Published
           </label>
-          <div class="input-group">
-            <input type="text" class="form-control filterrific-periodically-observed" id="filterrific_published_since" name="filterrific[published_since]" placeholder="Last month">
-            <!-- <div class="input-group-addon">
-              <i class="material-icons clear-input">clear</i>
-            </div> -->
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg filterrific-periodically-observed" id="filterrific_published_since" name="filterrific[published_since]" placeholder="Last month">
           </div>
         </div>
-        <div class="form-group">
-          <label for="filterrific_by_author">
+        <div class="form-group row">
+          <label for="filterrific_by_author" class="col-sm-3 col-form-label col-form-label-lg">
             Author
           </label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="filterrific_by_author" name="filterrific[by_author]" placeholder="Mary Beard">
-            <!-- <div class="input-group-addon">
-              <i class="material-icons clear-input">clear</i>
-            </div> -->
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_by_author" name="filterrific[by_author]" placeholder="Mary Beard">
           </div>
         </div>
-        <div class="form-group">
-          <label for="filterrific_published_by">
+        <div class="form-group row">
+          <label for="filterrific_published_by" class="col-sm-3 col-form-label col-form-label-lg">
             Publication
           </label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="filterrific_published_by" name="filterrific[published_by]" placeholder="The New York Times">
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_published_by" name="filterrific[published_by]" placeholder="The New York Times">
             <!-- <div class="input-group-addon">
               <i class="material-icons clear-input">clear</i>
             </div> -->
           </div>
         </div>
-        <div class="form-group">
-          <label class="form-inline justify-content-between">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-lg">
             Tags
             <div class="form-check">
               <label class="form-check-label">
@@ -69,26 +69,28 @@
               </label>
             </div>
           </label>
-          <div id="with_tag">
-            <select id="filterrific_with_tag" name="filterrific[with_tag][]" class="form-control" multiple="multiple">
+          <div id="with_tag" class="col-sm-9">
+            <select id="filterrific_with_tag" name="filterrific[with_tag][]" class="form-control form-control-lg" multiple="multiple">
               <% @all_tags.each do |tag| %>
                 <option value="<%= tag %>"><%= tag %></option>
               <% end %>
             </select>
           </div>
-          <div id="with_all_tags" style="display:none">
-            <select id="filterrific_with_all_tags" name="filterrific[with_all_tags][]" class="form-control" multiple="multiple">
+          <div id="with_all_tags" style="display:none" class="col-sm-9">
+            <select id="filterrific_with_all_tags" name="filterrific[with_all_tags][]" class="form-control form-control-lg" multiple="multiple">
               <% @all_tags.each do |tag| %>
                 <option value="<%= tag %>"><%= tag %></option>
               <% end %>
             </select>
           </div>
         </div>
-        <div class="form-group">
-          <label for="filterrific_of_type">
+        <div class="form-group row">
+          <label for="filterrific_of_type" class="col-sm-3 col-form-label col-form-label-lg">
             Content Type
           </label>
-          <input type="text" class="form-control" id="filterrific_of_type" name="filterrific[of_type]" placeholder="">
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_of_type" name="filterrific[of_type]" placeholder="">
+          </div>
         </div>
       </div>
     </div>

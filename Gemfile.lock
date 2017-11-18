@@ -400,6 +400,7 @@ DEPENDENCIES
   faraday
   filterrific!
   font-awesome-sass
+  http
   httparty
   jbuilder (~> 2.0)
   jquery-datatables-rails (~> 3.4.0)

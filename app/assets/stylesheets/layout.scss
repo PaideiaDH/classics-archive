@@ -25,12 +25,6 @@ div[data-react-class=Grid] {
   text-align: center;
 }
 
-#advancedModal {
-  .modal-content {
-    border-radius: 0px;
-  }
-}
-
 .carousel-item {
   height: 352px;
   overflow: hidden;
@@ -74,15 +68,6 @@ div[data-react-class=Grid] {
 html {
   position: relative;
   min-height: 100%;
-}
-
-body {
-	font-family: 'Optima';
-  background-image: image-url('xv.png');
-  background-color: $background-grey;
-  background-attachment: fixed;
-  margin-bottom: 30px;
-
 }
 
 .pagination {
