@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get 'sandbox', to: 'home#sandbox'
 
   resources :articles
+  resources :rss_feeds, only: %i[new create destroy]
   resources :dumped_links, only: %i[new create destroy reject]
 end

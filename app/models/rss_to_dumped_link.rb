@@ -23,8 +23,8 @@ module RSSToDumpedLink
   end
 
   def self.check_feeds
-    RSS_SOURCES.each do |url|
-      feed = get_feed(url)
+    RssFeed.all.each do |f|
+      feed = get_feed(f.feed_url)
       feed_to_link(feed)
     end
   end

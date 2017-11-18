@@ -9,45 +9,38 @@
     </div>
   <% end %>
   <% if @current_user.admin? %>
-    <br />
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#linkDump" role="tab">
-          Incoming
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#needApproval" role="tab">
-          Need Approval
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#approved" role="tab">
-          Approved
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="linkDump" role="tabpanel">
-        <%= render 'articles/link_dump_table', articles: @dumped_links, id: 'dumpedLinks' %>
+    <div class="row">
+      <div class="col-2">
+        <br>
+        <div class="nav flex-column nav-pills" id="managementTabs" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="articles-tab" data-toggle="pill" href="#manageArticles" role="tab" aria-controls="article" aria-selected="true">
+            Articles
+          </a>
+          <a class="nav-link" id="rss-tab" data-toggle="pill" href="#manageFeeds" role="tab" aria-controls="rss" aria-selected="false">
+            RSS Feeds
+          </a>
+          <a class="nav-link" id="topic-tab" data-toggle="pill" href="#manageTopics" role="tab" aria-controls="topic" aria-selected="false">
+            Topics
+          </a>
+        </div>
       </div>
-      <div class="tab-pane" id="needApproval" role="tabpanel">
-        <%= render 'articles/management_table', articles: @need_approval, id: 'allUnapproved' %>
-      </div>
-      <div class="tab-pane" id="approved" role="tabpanel">
-        <%= render 'articles/management_table', articles: @approved_articles, id: 'allApproved' %>
-      </div>
-      <div class="tab-pane" id="linkDump" role="tabpanel">
-        ...
+      <div class="col-10">
+        <div class="tab-content" id="managementContent">
+          <div class="tab-pane fade show active" id="manageArticles" role="tabpanel" aria-labelledby="articles-tab">
+            <%= render 'article_management_tables',
+              dumped_links: @dumped_links,
+              need_approval: @need_approval,
+              approved_articles: @approved_articles
+            %>
+          </div>
+          <div class="tab-pane fade" id="manageFeeds" role="tabpanel" aria-labelledby="rss-tab">
+            <%= render 'rss_feed_management' %>
+          </div>
+          <div class="tab-pane fade" id="manageTopics" role="tabpanel" aria-labelledby="topic-tab">
+            <%= render 'topic_management' %>
+          </div>
+        </div>
       </div>
     </div>
-    <br />
-    <script>
-    $(document).ready(function() {
-      $('#allApproved').DataTable();
-      $('#allUnapproved').DataTable();
-      $('#dumpedLinks').DataTable();
-    });
-    </script>
   <% end %>
 </div>

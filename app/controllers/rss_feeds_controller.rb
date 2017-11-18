@@ -1,60 +1,37 @@
-class RSSFeedsController < ApplicationController
-  before_action :set_rss_feed, only: [:show, :edit, :update, :destroy]
+class RssFeedsController < ApplicationController
+  include RssFeedsHelper
 
-  def index
-    @rss_feeds = RSSFeed.all
-  end
-
-  def show
-  end
+  before_action :set_rss_feed, only: [:destroy]
 
   def new
-    @rss_feed = RSSFeed.new
-  end
-
-  def edit
+    @rss_feed = RssFeed.new
   end
 
   def create
-    @rss_feed = RSSFeed.new(rss_feed_params)
+    @rss_feed = RssFeed.new(rss_feed_params)
 
-    respond_to do |format|
-      if @rss_feed.save
-        format.html { redirect_to @rss_feed, notice: 'RSS feed was successfully created.' }
-        format.json { render :show, status: :created, location: @rss_feed }
-      else
-        format.html { render :new }
-        format.json { render json: @rss_feed.errors, status: :unprocessable_entity }
+    if @rss_feed.save
+      flash[:success] = "#{@rss_feed.name} added successfully."
+    else
+      @rss_feed.errors.full_messages.each do |error|
+        flash[:danger] = error.html_safe
       end
     end
-  end
-
-  def update
-    respond_to do |format|
-      if @rss_feed.update(rss_feed_params)
-        format.html { redirect_to @rss_feed, notice: 'RSS feed was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rss_feed }
-      else
-        format.html { render :edit }
-        format.json { render json: @rss_feed.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to articles_manage_path
   end
 
   def destroy
     @rss_feed.destroy
-    respond_to do |format|
-      format.html { redirect_to rss_feeds_url, notice: 'RSS feed was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = "#{@rss_feed.name} removed from incoming links."
+    redirect_to articles_manage_path
   end
 
   private
     def set_rss_feed
-      @rss_feed = RSSFeed.find(params[:id])
+      @rss_feed = RssFeed.find(params[:id])
     end
 
     def rss_feed_params
-      params.fetch(:rss_feed, {})
+      params.require(:rss_feed).permit(:name, :feed_url)
     end
 end
