@@ -104,15 +104,10 @@ class Article < ActiveRecord::Base
   scope :by_author, lambda { |query|
 
     return nil if query.blank?
-    pieces = query.split(' ')
-    last_name = pieces[-1]
-    first_name = pieces[0..-2].join(' ')
 
     ids = search(
-      last_name,
-      fields: [:author_last_name],
-      match: :word_start,
-      where: { author_first_name: first_name }
+      query,
+      fields: [:author_full_name]
     ).map &:id
     where id: ids
   }
@@ -230,6 +225,7 @@ class Article < ActiveRecord::Base
 
   def search_data
     attributes.merge(
+      author_full_name: author_full_name,
       tag_names: tags.map(&:name)
     )
   end
