@@ -63,7 +63,7 @@
           <%= render 'tags_tooltip', f: f %>
           <div class="col-9">
             <div class="row">
-              <%= f.select :tag_list, TAG_RECS, { include_blank: false }, { class: "js-example-tags form-control", multiple: "multiple" } %>
+              <%= f.select :tag_list, Topic.all.map(&:name), { include_blank: false }, { class: "js-example-tags form-control", multiple: "multiple" } %>
             </div>
           </div>
         </div>

@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :rss_feeds, only: %i[new create destroy]
+  resources :topics, only: %i[new create destroy]
   resources :dumped_links, only: %i[new create destroy reject]
 end
