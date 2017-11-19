@@ -38,40 +38,40 @@
 @import 'layout';
 @import 'search';
 
-@font-face {
-  font-family: 'Aileron';
-  src: font-url('Aileron/Aileron-Light.ttf') format('truetype');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'Aileron';
-  src: font-url('Aileron/Aileron-UltraLight.ttf') format('truetype');
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Aileron';
-  src: font-url('Aileron/Aileron-Thin.ttf') format('truetype');
-  font-weight: 200;
-}
-
-
-@font-face {
-  font-family: 'Aileron';
-  src: font-url('Aileron/Aileron-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Aileron';
-  src: font-url('Aileron/Aileron-Bold.ttf') format('truetype');
-  font-weight: 600;
-}
+// @font-face {
+//   font-family: 'Aileron';
+//   src: font-url('Aileron/Aileron-Light.ttf') format('truetype');
+//   font-weight: normal;
+// }
+//
+// @font-face {
+//   font-family: 'Aileron';
+//   src: font-url('Aileron/Aileron-UltraLight.ttf') format('truetype');
+//   font-weight: 100;
+// }
+//
+// @font-face {
+//   font-family: 'Aileron';
+//   src: font-url('Aileron/Aileron-Thin.ttf') format('truetype');
+//   font-weight: 200;
+// }
+//
+//
+// @font-face {
+//   font-family: 'Aileron';
+//   src: font-url('Aileron/Aileron-Regular.ttf') format('truetype');
+//   font-weight: 400;
+// }
+//
+// @font-face {
+//   font-family: 'Aileron';
+//   src: font-url('Aileron/Aileron-Bold.ttf') format('truetype');
+//   font-weight: 600;
+// }
 
 body {
-	font-family: 'Aileron';
-  font-weight: 200;
+	font-family: 'Poppins';
+  font-weight: 500;
   background-image: image-url('xv.png');
   background-color: $background-grey;
   background-attachment: fixed;
@@ -83,7 +83,7 @@ td {
 }
 
 input, button, select, optgroup, textarea {
-	font-family: 'Aileron';
+	font-family: 'Poppins';
 }
 
 .top-bar {

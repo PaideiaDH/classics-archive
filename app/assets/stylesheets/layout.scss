@@ -26,16 +26,17 @@ div[data-react-class=Grid] {
 }
 
 .carousel-item {
-  height: 352px;
+  height: 500px;
   overflow: hidden;
   width: 100%;
 }
 
 .carousel-caption {
-  background: rgba(0,0,0,0.7);
+  background: rgba(210,126,48,0.95);
   a {
     text-decoration: none;
     color: white;
+    font-size: 150%;
   }
 }
 
