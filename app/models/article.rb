@@ -41,7 +41,7 @@ class Article < ActiveRecord::Base
     ids = search(
       query,
       fields: %i[boilerpipe_text calais_tags]
-    ).map &:id
+    ).map(&:id)
     where id: ids
   })
 
@@ -96,7 +96,7 @@ class Article < ActiveRecord::Base
     ids = search(
       query,
       fields: [:site_name]
-    ).map &:id
+    ).map(&:id)
     where id: ids
   })
 
@@ -107,7 +107,7 @@ class Article < ActiveRecord::Base
     ids = search(
       query,
       fields: [:author_full_name]
-    ).map &:id
+    ).map(&:id)
     where id: ids
   }
 
@@ -125,10 +125,11 @@ class Article < ActiveRecord::Base
   }
 
   scope :with_all_tags, lambda { |query|
+    search_phrase = query.join(" AND ")
     ids = search(
-      query,
+      search_phrase,
       fields: [:tag_names]
-    ).map &:id
+    ).map(&:id)
     where id: ids
   }
 
@@ -142,7 +143,7 @@ class Article < ActiveRecord::Base
       where: {
         published_time: date_range
       }
-    ).map &:id
+    ).map(&:id)
     where id: ids
   })
 
@@ -153,7 +154,7 @@ class Article < ActiveRecord::Base
       ids = search(
         content_type,
         fields: [:type_of]
-      ).map &:id
+      ).map(&:id)
     end
 
     uniq_ids = ids.flatten.uniq
