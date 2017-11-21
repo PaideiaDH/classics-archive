@@ -40,8 +40,7 @@ class Article < ActiveRecord::Base
 
     ids = search(
       query,
-      fields: %i[boilerpipe_text calais_tags],
-      match: :word_start
+      fields: %i[boilerpipe_text calais_tags]
     ).map &:id
     where id: ids
   })

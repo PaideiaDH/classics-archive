@@ -114,7 +114,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-      format.json { render json: @articles, include: [:tags, :image] }
+      format.json { render json: @articles, include: [:taggings, :image] }
     end
     rescue ActiveRecord::RecordNotFound => e
       puts "Had to reset filterrific params: #{ e.message }"
