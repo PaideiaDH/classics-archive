@@ -112,11 +112,15 @@ class Article < ActiveRecord::Base
   }
 
   scope :with_tag, lambda { |query|
-    ids = search(
-      query,
-      fields: [:tag_names],
-      operator: 'or'
-    ).map &:id
+    ids = []
+    query.each do |tag|
+      ids << search(
+        tag,
+        fields: [:tag_names],
+        match: :phrase
+      ).map(&:id)
+    end
+    ids = ids.flatten.uniq
     where id: ids
   }
 
@@ -179,7 +183,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.terms
-    Article.all.where(approved: true).map(&:calais_tags).flatten.uniq
+    Article.all.where(approved: true).map(&:tag_list).flatten.uniq
   end
 
   validates :title,
