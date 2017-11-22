@@ -19,13 +19,21 @@
   </head>
 <body>
   <%= yield :filterrific_form %>
-    <nav class="navbar fixed-top navbar-expand-lg">
-      <%= render 'layouts/navigation' %>
-      <div class="mr-0">
+    <nav class="navbar navbar-expand-lg" id="top-nav">
+      <div class="container">
+        <a class="navbar-brand" href="http://www.paideiainstitute.org/" target="_blank" title="The Paideia Institute">
+          <img src="<%= asset_path 'logo' %>" class="icon"/>
+        </a>
         <%= yield :search_bar %>
+        <a class="navbar-brand" href="/articles?filterrific%5Breset_filterrific%5D=true" title="@publicclassics">
+          <img src="<%= asset_path 'owl' %>" class="icon"/>
+        </a>
+
       </div>
     </nav>
-    <div id="nav-neg-space"></div>
+    <nav class="navbar sticky-top" id="bottom-nav">
+      <%= render 'layouts/navigation' %>
+    </nav>
     <div class="container">
       <div class="row">
         <div class="col-12 col-centered">
@@ -43,16 +51,5 @@
     <% if current_page?(articles_path) %>
   </form>
     <% end %>
-  <script>
-    nav_height = $('nav').outerHeight()
-    $('#nav-neg-space').css({'height': nav_height + 'px'})
-    // $('#navToggle')
-    // .focus(function() {
-    //   $('#navbarNav').show()
-    // })
-    // .blur(function() {
-    //   $('#navbarNav').show()
-    // })
-  </script>
 </body>
 </html>

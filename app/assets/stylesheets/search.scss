@@ -3,11 +3,10 @@
 #filterrific_with_query {
   position: absolute;
   width: 400px;
-	border: none;
-	border-bottom: 1.5px solid white;
-  outline: none;
-  border-bottom: 1.5px solid $paideia-orange;
-  right: 12px;
+  left: calc(50% - 200px);
+  &:focus {
+    border-color: $paideia-orange;
+  }
 }
 
 #advancedModal {

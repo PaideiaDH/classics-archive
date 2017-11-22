@@ -1,11 +1,35 @@
 @import 'colors';
 
-#development, #about, #manage, #sign_in, #sign_out {
-  i {
-    color: white;
+#top-nav {
+  min-height: 100px;
+  background-color: white;
+  padding: 0px;
+}
+
+#bottom-nav {
+  padding: 0px;
+  border-top: 10px solid $paideia-blue;
+  background-color: $paideia-nav-grey;
+  text-transform: uppercase;
+  text-align: center;
+  .navbar-nav {
+    width: 100%;
   }
-  &:hover i{
-    color: $paideia-orange;
+  a.nav-link.nav-item {
+    display: inline-block !important;
+    width: 33%;
+  }
+}
+
+
+#development, #about, #manage, #sign_in, #sign_out {
+  color: black;
+  display: inline!important;
+  i {
+    color: $paideia-blue;
+  }
+  &:hover {
+    background-color: $paideia-light-blue;
   }
 }
 
@@ -73,24 +97,15 @@ div.ui-menu-item-wrapper {
   }
 }
 
-nav.navbar {
-  background-color: white;
-  padding: 0px;
-  min-height: 62px;
-  -webkit-box-shadow: 0 8px 8px -8px $paideia-blue;
-  -moz-box-shadow: 0 8px 8px -8px $paideia-blue;
-  box-shadow: 0 8px 8px -8px $paideia-blue;
-}
-
 nav img {
-  max-height: 52px;
+  max-height: 60px;
 }
 
-a.nav-item, a.navbar-brand {
-  padding: 4px 0px 4px 4px;
-	font-size: 20px;
-	color: $paideia-dark-blue
-}
+// a.nav-item, a.navbar-brand {
+//   padding: 4px 0px 4px 4px;
+// 	font-size: 20px;
+// 	color: $paideia-dark-blue
+// }
 
 .select2-search__field {
   width: 100% !important;
@@ -133,7 +148,7 @@ span#select2-filterrific_with_tag-container {
   border: 1px solid $paideia-blue !important;
   padding: 4px 8px !important;
   border-radius: 0.2rem !important;
-  font-family: 'Poppins' !important;
+  font-family: 'Lato' !important;
   font-size: 1.25rem !important;
   line-height: 1.25 !important;
 }
@@ -192,9 +207,9 @@ span.filterrific_spinner img {
 }
 
 .ui-widget {
-	font-family: 'Poppins' !important;
+	font-family: 'Lato' !important;
 }
 
 button[class^="ui-priority-"] {
-  font-family: 'Poppins' !important;
+  font-family: 'Lato' !important;
 }
