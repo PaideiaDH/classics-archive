@@ -3,11 +3,12 @@
 #filterrific_with_query {
   position: absolute;
   width: 400px;
-	border: none;
-	border-bottom: 1.5px solid white;
-  outline: none;
-  border-bottom: 1.5px solid $paideia-orange;
-  right: 12px;
+  left: calc(50% - 200px);
+  &:focus {
+    border-color: $paideia-orange;
+    box-shadow:inset 0 0 1px 1px $paideia-orange;
+    background: #fff;
+  }
 }
 
 #advancedModal {
@@ -17,4 +18,8 @@
   .modal-header {
     border-bottom: 2px solid $paideia-orange;
   }
+}
+
+#applyFilters {
+  margin: auto;
 }

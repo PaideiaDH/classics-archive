@@ -65,7 +65,7 @@
   background-color: $paideia-light-grey;
   max-width: 100%;
   border: 1px solid #E2E2E2 !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
   margin: auto;
   position: relative;
   i.site_name {
@@ -134,7 +134,7 @@ p.card-text {
 
 .card-img-top {
 	max-width: 100%;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
   border-bottom: 2px solid $paideia-orange;
 }
 

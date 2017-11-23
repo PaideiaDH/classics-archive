@@ -1,50 +1,45 @@
-<a class="navbar-brand" href="/articles?filterrific%5Breset_filterrific%5D=true" title="@onlinepublicclassicsarchive">
-  <img src="<%= asset_path 'owl' %>" class="icon"/>
-</a>
-<ul class="navbar-nav">
-  <li class="nav-item">
-    <a class="nav-link" id="about" href="/about">
+<div class="navbar-nav justify-content-between">
+  <% unless current_page? articles_manage_path %>
+    <a class="nav-item nav-link" id="about" href="/about">
       About
       <i class="fa fa-info" aria-hidden="true"></i>
     </a>
-  </li>
-  <% unless current_page? root_path %>
-    <li class="nav-item">
-      <a href="http://104.130.11.126:8080/servicedesk/customer/portal/1" id="development" target="_blank" class="nav-link">
-        Development
-        <i class="fa fa-external-link" aria-hidden="true"></i>
-      </a>
-    </li>
   <% end %>
   <% if current_page? articles_manage_path %>
-    <li class="nav-item">
-      <a href="/signout" id="sign_out" class="nav-link">
-        Sign Out
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
-      </a>
-    </li>
+    <a class="nav-item nav-link" href="/signout" id="sign_out">
+      Sign Out
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+    </a>
   <% else %>
+    <a class="nav-item nav-link" id="advancedLink"  data-toggle="modal" data-target="#advancedModal">
+      Advanced Search
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </a>
+    <a class="nav-item nav-link" id="resetLink" href="/articles?filterrific%5Breset_filterrific%5D=true">
+      Reset Filters
+      <i class="fa fa-refresh" aria-hidden="true"></i>
+    </a>
     <% if current_user && current_user.admin? %>
-      <li class="nav-item">
-        <a href="/articles/manage" id="manage" class="nav-link">
-          Manage Articles
-          <i class="fa fa-list-alt" aria-hidden="true"></i>
-        </a>
-      </li>
+      <a class="nav-item nav-link" href="/articles/manage" id="manage">
+        Manage Articles
+        <i class="fa fa-list-alt" aria-hidden="true"></i>
+      </a>
     <% elsif current_user %>
-      <li class="nav-item">
-        <a href="/articles/manage" id="sign_in" class="nav-link">
-          Contribute
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </a>
-      </li>
+      <a href="/articles/manage" id="sign_in" class="nav-link nav-item">
+        Contribute
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </a>
     <% else %>
-      <li class="nav-item">
-        <a href="/auth/google_oauth2" id="sign_in" class="nav-link">
-          Contribute
-          <i class="fa fa-google" aria-hidden="true"></i>
-        </a>
-      </li>
+      <a href="/auth/google_oauth2" id="sign_in" class="nav-link nav-item">
+        Contribute
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </a>
     <% end %>
+  <% end %>
+  <% unless current_page? articles_path %>
+    <a class="nav-item nav-link" href="http://104.130.11.126:8080/servicedesk/customer/portal/1" id="development" target="_blank" >
+      Development
+      <i class="fa fa-external-link" aria-hidden="true"></i>
+    </a>
   <% end %>
 </ul>

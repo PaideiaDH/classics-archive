@@ -26,7 +26,7 @@
   * attribute and a focus state
   */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300|Poppins:200,300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'bootstrap';
@@ -70,11 +70,9 @@
 // }
 
 body {
-	font-family: 'Poppins';
-  font-weight: 500;
-  background-image: image-url('xv.png');
-  background-color: $background-grey;
-  background-attachment: fixed;
+	font-family: 'Lato';
+  font-weight: 300;
+  background-color: white;
   margin-bottom: 30px;
 }
 
@@ -83,7 +81,7 @@ td {
 }
 
 input, button, select, optgroup, textarea {
-	font-family: 'Poppins';
+	font-family: 'Lato';
 }
 
 .top-bar {
