@@ -1,13 +1,3 @@
 plugins:
   postcss-smart-import: {}
   postcss-cssnext: {}
-
-
-export GOOGLE_CLIENT_ID=415150494328-2k2h1o47fql3vh79s3a8ennakbfopqtk.apps.googleusercontent.com
-export GOOGLE_CLIENT_SECRET=-UVPyPYgXVMY28beHTnh8k7S
-export SECRET_KEY_BASE_PRODUCTION=095677f04de1a6259e006466f1809e4eee4ce2db05fab2bbff99f4cbdf78ac02a5b3622ea1002a25b64605380f65250786b0e237caa8f8d0c3413ccc9ede4fe9
-export OPCA_TWITTER_KEY=a5vopHwWjJfW18w00qxSBSmUO
-export OPCA_POSTGRES_PASSWORD=whereintheworldisjasonpedicone
-export OPCA_TOKEN=910969164067692544-S0aPMTLzOq66Yv7avNUWehx7r3in2Dt
-export OPCA_TOKEN_SECRET=c9QXxvlwfgVO3EK6dwpqYDJK3yVkfaN9O9zvOM6VoJHfg
-export OPCA_TWITTER_SECRET=bl6NCo0xl7zn8ggWjn8DybHYFnt0GdnH5fPZjsCv6fg8yrhGMb
