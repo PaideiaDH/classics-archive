@@ -3,33 +3,39 @@
 #top-nav {
   min-height: 100px;
   background-color: white;
-  padding: 0px;
+  padding: 0px calc(10%);
 }
 
 #bottom-nav {
-  padding: 0px;
+  padding: 0px calc(10%);
   border-top: 10px solid $paideia-blue;
   background-color: $paideia-nav-grey;
   text-transform: uppercase;
   text-align: center;
+  font-weight: 400;
   .navbar-nav {
+    display: block !important;
+    text-align: center;
     width: 100%;
   }
   a.nav-link.nav-item {
     display: inline-block !important;
-    width: 33%;
+    padding: 8px 16px;
+    // width: 16%;
   }
 }
 
 
-#development, #about, #manage, #sign_in, #sign_out {
+#development, #about, #manage, #sign_in, #sign_out, #resetLink, #advancedLink {
   color: black;
   display: inline!important;
+  font-size: 14px;
   i {
     color: $paideia-blue;
   }
   &:hover {
     background-color: $paideia-light-blue;
+    cursor: pointer;
   }
 }
 
