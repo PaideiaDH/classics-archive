@@ -1,0 +1,14 @@
+<div class="row flex-items-xs-center">
+  <div class="col-12">
+    <% if params[:user_url].nil? %>
+      <p class="alert alert-info">
+        Submit an article URL above.
+      </p>
+    <% else %>
+      <% if @existing.blank? %>
+        <% flash[:info] = "Populated fields reflect published information" %>
+        <%= render 'new_article_form' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

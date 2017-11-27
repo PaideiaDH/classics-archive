@@ -1,0 +1,192 @@
+<div id="allAuthors" data-allauthors="<%= @all_authors %>"></div>
+<div id="allPubs" data-allpublishers="<%= @all_publishers %>"></div>
+<div id="contentTypes" data-contenttypes="<%= CONTENT_TYPES.join(',') %>"></div>
+
+<div class="modal fade" id="advancedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel" aria-describedby="advancedReset">
+          Advanced Search
+        </h4>
+        &nbsp;
+        <a href="/articles?filterrific%5Breset_filterrific%5D=true" id="advancedReset" class="form-text text-muted">
+          Reset Filters
+        </a>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label for="filterrific_sorted_by" class="col-sm-3 col-form-label col-form-label-lg">
+            Sorted by
+          </label>
+          <div class="col-sm-9">
+            <select class="filterrific-periodically-observed form-control form-control-lg" name="filterrific[sorted_by]" id="filterrific_sorted_by">
+              <% Article.options_for_sorted_by.each do |option| %>
+              <option value="<%= option[1] %>" <%= @sorted == option[1] ? 'selected' : '' %>>
+                <%= option[0] %>
+              </option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="filterrific_published_by" class="col-sm-3 col-form-label col-form-label-lg">
+            Date Published
+          </label>
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg filterrific-periodically-observed" id="filterrific_published_since" name="filterrific[published_since]" placeholder="Last month">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="filterrific_by_author" class="col-sm-3 col-form-label col-form-label-lg">
+            Author
+          </label>
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_by_author" name="filterrific[by_author]" placeholder="Mary Beard">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="filterrific_published_by" class="col-sm-3 col-form-label col-form-label-lg">
+            Publication
+          </label>
+          <div class="input-group col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_published_by" name="filterrific[published_by]" placeholder="The New York Times">
+            <!-- <div class="input-group-addon">
+              <i class="material-icons clear-input">clear</i>
+            </div> -->
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-lg">
+            Tags
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="matchAll">
+                Match All
+              </label>
+            </div>
+          </label>
+          <div id="with_tag" class="col-sm-9">
+            <select id="filterrific_with_tag" name="filterrific[with_tag][]" class="form-control form-control-lg" multiple="multiple">
+              <% @all_tags.each do |tag| %>
+                <option value="<%= tag %>"><%= tag %></option>
+              <% end %>
+            </select>
+          </div>
+          <div id="with_all_tags" style="display:none" class="col-sm-9">
+            <select id="filterrific_with_all_tags" name="filterrific[with_all_tags][]" class="form-control form-control-lg" multiple="multiple">
+              <% @all_tags.each do |tag| %>
+                <option value="<%= tag %>"><%= tag %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="filterrific_of_type" class="col-sm-3 col-form-label col-form-label-lg">
+            Content Type
+          </label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control form-control-lg" id="filterrific_of_type" name="filterrific[of_type]" placeholder="">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="applyFilters" type="button" class="btn btn-secondary btn-lg orange" data-dismiss="modal">
+          View Results
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function() {
+  var auths = $('#allAuthors').data('allauthors').split(',')
+  var pubs = $('#allPubs').data('allpublishers').split(',')
+  var types = $('#contentTypes').data('contenttypes').split(',')
+  var start = moment().subtract(29, 'days');
+  var end = moment();
+
+  $('#matchAll').change(function() {
+    $('#with_tag').toggle(!this.checked)
+    $('#with_all_tags').toggle(this.checked)
+  })
+
+  $('#filterrific_with_tag').select2({
+    placeholder: "Horace, Ancient Greek",
+    tags: true,
+    theme: "bootstrap",
+    width: '100%',
+  })
+
+  $('#filterrific_with_all_tags').select2({
+    placeholder: "Horace, Ancient Greek",
+    tags: true,
+    theme: "bootstrap",
+    width: '100%',
+  })
+
+  $('#filterrific_of_type').select2({
+    placeholder: "Journal Article, Blog Post",
+    tags: true,
+    theme: "bootstrap",
+    data: types,
+    multiple: true,
+    width: '100%',
+  })
+
+  $("#filterrific_by_author").autocomplete({
+    source: auths,
+    select: function( e, ui ) {
+      $(this).addClass('filterrific-periodically-observed')
+    },
+    close: function(e, ui) {
+      $(this).blur()
+    }
+  })
+
+  $("#filterrific_published_by").autocomplete({
+    source: pubs,
+    select: function( e, ui ) {
+      $(this).addClass('filterrific-periodically-observed')
+    },
+    close: function(e, ui) {
+      $(this).blur()
+    }
+  })
+
+  $( "#filterrific_published_since" ).daterangepicker({
+    ranges: {
+      "Today": [moment(), moment()],
+      "Yesterday": [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      "Last 7 Days": [moment().subtract(6, 'days'), moment()],
+      "Last 30 Days": [moment().subtract(29, 'days'), moment()],
+      "This Month": [moment().startOf('month'), moment().endOf('month')],
+      "Last Month": [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+      "This Year": [moment().startOf('year'), moment()]
+    },
+    startDate: start,
+    endDate: end,
+    autoUpdateInput: false,
+    locale: {
+      cancelLabel: 'Clear'
+    }
+  });
+
+  $("#filterrific_published_since").on('apply.daterangepicker', function(ev, picker) {
+    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $("#filterrific_published_since").on('cancel.daterangepicker', function(ev, picker) {
+    $(this).val('');
+  });
+
+  // $('.clear-input').click(function() {
+  //   var $target = $(this).parent().parent().find('input')
+  //   $target.addClass('filterrific-periodically-observed').val('')
+  // })
+})
+
+</script>

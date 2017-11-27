@@ -1,0 +1,31 @@
+<div class="col-3 col-form-label">
+  <%= f.label :tag_list, "Tags", required: true %>
+  <a class="question-mark" data-toggle="tooltip" data-placement="top" data-html="true" title="
+  If any of the following show up, tag them:
+  <ul>
+    <li>
+      Name of text mentioned
+    </li>
+    <li>
+      Name of ancient city/area/region(s) mentioned
+    </li>
+    <li>
+      Name of ancient figure(s) mentioned
+    </li>
+    <li>
+      Name of Classicist/archaeologist mentioned
+    </li>
+    <li>
+      Name of Classics/archaeology university department mentioned
+    </li>
+    <li>
+      Name of politician mentioned (e.g. Donald Trump)
+    </li>
+  </ul>
+  If it is written in Latin, tag 'Latine'">
+    <i class="fa fa-lg fa-question-circle" aria-hidden="true"></i>
+  </a>
+</div>
+<script>
+$('[data-toggle="tooltip"]').tooltip()
+</script>

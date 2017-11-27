@@ -1,0 +1,44 @@
+<div class="card" data-item-tags="<%= article.tag_list.join(",")%>">
+  <a href="<%= article.url %>" class="link-body" target="_blank">
+    <img class="card-img-top img-fluid" src="<%= article.image.url(:card_top) %>" alt="<%= "#{article.title} by #{article.author_full_name}" %>">
+    <div class="card-block">
+      <h5 class="card-title link-body">
+        <%= article.title %><br />
+      </h5>
+    </a>
+    <label class="author filterrific-periodically-observed">
+      <input class="link-body" type="radio" name="filterrific[by_author]" value="<%= article.author_last_name %>" id="filterrific_by_author_<%= article.author_last_name %>" autocomplete="off" style="appearance:none; display:none;">
+        by <b><%= "#{article.author_first_name} #{article.author_last_name}" %></b>
+      </input>
+    </label>
+    <p class="card-text link-body">
+      <a href="<%= article.url %>" class="link-body" target="_blank">
+      <%= "#{article.description}   " %>
+        <span class="glyphicon glyphicon-book" aria-hidden="true">
+          <i class="fa fa-external-link" aria-hidden="true"></i>
+        </span>
+      </a>
+    </p>
+  </div>
+  <div class="card-block inline">
+    <% article.tag_list.each do |tag| %>
+    <label class="btn btn-sm btn-secondary tag">
+      <input type="radio" value="<%= tag %>" name="filterrific[with_tag]" id="filterrific_with_tag_<%= tag.underscore.parameterize %>" autocomplete="off" style="appearance:none; display:none;">
+      <%= tag %>
+    </label>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <a class="published_time">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+       &nbsp<%= "#{article.published_time.strftime('%e %B %Y')}" %>
+    </a>
+    <label class="site_name pull-right filterrific-periodically-observed">
+      <input class="link-body" type="radio" name="filterrific[published_by]" value="<%= article.site_name %>" id="filterrific_published_by_<%= article.site_name %>" autocomplete="off" style="appearance:none; display:none;">
+        <%= "#{article.site_name}"%> &nbsp
+        <i class="fa fa-institution" aria-hidden="true"></i>
+      </input>
+    </label>
+
+  </div>
+</div>

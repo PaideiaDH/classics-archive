@@ -1,0 +1,46 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Actions
+      </th>
+    <tr>
+  </thead>
+  <tbody>
+    <% Topic.all.order(:name).each do |topic| %>
+      <tr>
+        <td>
+          <%= topic.name %>
+        </td>
+        <td>
+          <%= link_to "Remove",
+            topic_path(topic.id),
+            method: :delete,
+            class: 'btn btn-secondary btn-sm',
+            data: {
+              confirm: "Are you sure you want to remove #{topic.name} from suggestions?"
+            }
+          %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <%= form_for Topic.new, class: "form-inline" do |f| %>
+        <td>
+          <%= f.text_field :name,
+            class: "form-control form-control-sm",
+            placeholder: "Topic",
+            type: "name",
+            required: true
+          %>
+        </td>
+        <td>
+          <%= f.submit 'Add', class: 'btn btn-primary btn-sm orange' %>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

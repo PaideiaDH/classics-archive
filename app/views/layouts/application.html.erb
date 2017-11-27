@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+  <title>Online Public Classics Archive</title>
+
+  <!-- Latest compiled and minified CSS -->
+    <link rel="icon" type="image/png" href="/assets/square_owl.png">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_pack_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+  </head>
+<body>
+  <%= yield :filterrific_form %>
+    <nav class="navbar navbar-expand-lg" id="top-nav">
+      <div class="container">
+        <a class="navbar-brand" href="http://www.paideiainstitute.org/" target="_blank" title="The Paideia Institute">
+          <img src="<%= asset_path 'full-paideia' %>" class="icon"/>
+        </a>
+        <%= yield :search_bar %>
+        <a class="navbar-brand" href="/articles?filterrific%5Breset_filterrific%5D=true" title="@publicclassics">
+          <img src="<%= asset_path 'owl' %>" class="icon"/>
+        </a>
+      </div>
+    </nav>
+    <nav class="navbar sticky-top" id="bottom-nav">
+      <%= render 'layouts/navigation' %>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-centered">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= sanitize value %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+      <%= yield %>
+
+
+    <%= render 'layouts/footer' %>
+    <% if current_page?(articles_path) %>
+  </form>
+    <% end %>
+</body>
+</html>

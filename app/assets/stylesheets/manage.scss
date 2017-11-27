@@ -1,0 +1,42 @@
+@import "colors";
+
+#managementBreak {
+  border-top: 3px solid $paideia-orange !important;
+  margin-bottom: 8px !important;
+}
+
+#managementTabs {
+  a.nav-link {
+    border-radius: 0px 30px 30px 0px;
+    &.active {
+      background-color: $paideia-orange;
+    }
+  }
+}
+
+#newArticle {
+  width: 80%;
+  margin: 16px auto;
+}
+
+a[href="#linkDump"] {
+  color: #DC3545;
+  &.active {
+    color: white !important;
+    background-color: #DC3545 !important;
+  }
+}
+a[href="#needApproval"] {
+  color: #FFC107;
+  &.active {
+    color: white !important;
+    background-color: #FFC107 !important;
+  }
+}
+a[href="#approved"] {
+  color: #28A745;
+  &.active {
+    color: white !important;
+    background-color: #28A745 !important;
+  }
+}

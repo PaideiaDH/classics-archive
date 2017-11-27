@@ -1,0 +1,9 @@
+<% content_for :filterrific_form do %>
+  <form id="filterrific_filter" class="new_filterrific" action="/articles" accept-charset="UTF-8" method="get">
+    <input name="utf8" type="hidden" value="✓">
+    <%= render 'layouts/advanced_search_modal' %>
+<% end %>
+
+<div id="filterrific_results">
+  <%= render 'articles/list', articles: @articles, current_filters: @current_filters, featured_articles: @featured_articles, sorted: @sorted %>
+</div>

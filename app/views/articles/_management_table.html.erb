@@ -1,0 +1,44 @@
+<table class="table table-striped" id="<%= id %>">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Published</th>
+      <th>Archived</th>
+      <th>Actions</th>
+      <th>Approved?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% articles.each do |a| %>
+    <tr>
+      <td>
+        <%= a.title %>
+        <a href="<%= a.url %>" target="_blank">
+          <i class='fa fa-external-link'></i>
+        </a>
+      </td>
+      <td>
+        <%= "#{a.author_last_name}, #{a.author_first_name}" %>
+      </td>
+      <td>
+        <%= a.published_time.strftime("%e %B %Y") %>
+      </td>
+      <td>
+        <%= a.created_at.strftime("%e %B %Y") %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_article_path(a.id) %>
+        <%= link_to "Delete", article_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+      <td>
+        <% if a.approved_by %>
+          <%= User.exists?(a.approved_by) ? acronym(User.find(a.approved_by).name) : a.approved_by %>
+        <% else %>
+          <%= link_to "not yet", edit_article_path(a.id) %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

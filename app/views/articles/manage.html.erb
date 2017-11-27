@@ -1,0 +1,47 @@
+<div class="container">
+  <%= form_tag new_article_path, method: "get", class: "form-inline" do %>
+    <div class="input-group" id='newArticle'>
+      <%= text_field_tag :user_url, "", class: "form-control form-control-lg", placeholder: "enter url here...", type: "url" %>
+      <span class="input-group-btn">
+        <%= submit_tag "Add Article", class: "btn btn-primary btn-lg orange" %>
+      </span>
+    </div>
+  <% end %>
+</div>
+<% if @current_user.admin? %>
+  <hr id="managementBreak" />
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills" id="managementTabs" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="articles-tab" data-toggle="pill" href="#manageArticles" role="tab" aria-controls="article" aria-selected="true">
+            Articles
+          </a>
+          <a class="nav-link" id="rss-tab" data-toggle="pill" href="#manageFeeds" role="tab" aria-controls="rss" aria-selected="false">
+            RSS Feeds
+          </a>
+          <a class="nav-link" id="topic-tab" data-toggle="pill" href="#manageTopics" role="tab" aria-controls="topic" aria-selected="false">
+            Topics
+          </a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content" id="managementContent">
+          <div class="tab-pane fade show active" id="manageArticles" role="tabpanel" aria-labelledby="articles-tab">
+            <%= render 'article_management_tables',
+              dumped_links: @dumped_links,
+              need_approval: @need_approval,
+              approved_articles: @approved_articles
+            %>
+          </div>
+          <div class="tab-pane fade" id="manageFeeds" role="tabpanel" aria-labelledby="rss-tab">
+            <%= render 'rss_feed_management' %>
+          </div>
+          <div class="tab-pane fade" id="manageTopics" role="tabpanel" aria-labelledby="topic-tab">
+            <%= render 'topic_management' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

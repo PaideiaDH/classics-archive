@@ -1,0 +1,62 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Source
+      </th>
+      <th>
+        Actions
+      </th>
+    <tr>
+  </thead>
+  <tbody>
+    <% RssFeed.all.order(:name).each do |feed| %>
+      <tr>
+        <td>
+          <%= feed.name %>
+        </td>
+        <td>
+          <a href="<%= feed.feed_url %>" target="_blank">
+            <%= feed.feed_url %>
+          </a>
+        </td>
+        <td>
+          <%= link_to "Remove",
+            rss_feed_path(feed.id),
+            method: :delete,
+            class: 'btn btn-secondary btn-sm',
+            data: {
+              confirm: "Are you sure you want to remove #{feed.name} from incoming links?"
+            }
+          %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <%= form_for RssFeed.new, class: "form-inline" do |f| %>
+        <td>
+          <%= f.text_field :name,
+            class: "form-control form-control-sm",
+            placeholder: "Publication Name",
+            type: "name",
+            required: true
+          %>
+        </td>
+        <td>
+          <%= f.text_field :feed_url,
+            class: "form-control form-control-sm",
+            placeholder: "RSS Feed URL",
+            type: "url",
+            required: true
+          %>
+        </td>
+        <td>
+          <%= f.submit 'Add', class: 'btn btn-primary btn-sm orange' %>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

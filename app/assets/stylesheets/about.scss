@@ -1,0 +1,29 @@
+.jumbotron {
+  padding: 32px;
+  background-color: white;
+}
+
+div.about-body {
+  background-color: white;
+  padding: 8px;
+}
+
+ul.brain-trust {
+  list-style: none;
+  padding: 0px;
+  li {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: white;
+    img {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+}
+
+div#about-page {
+  h4 {
+    text-align: center;
+  }
+}

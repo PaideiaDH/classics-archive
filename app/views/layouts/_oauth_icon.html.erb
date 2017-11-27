@@ -1,0 +1,12 @@
+<% if current_user %>
+  <a href="/articles/manage" class="contains-fa">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </a>
+  <a href="/signout" id="sign_out" class="contains-fa">
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+  </a>
+<% else %>
+  <a href="/auth/google_oauth2" id="sign_in" class="contains-fa">
+    <i class="fa fa-sign-in" aria-hidden="true"></i>
+  </a>
+<% end %>
