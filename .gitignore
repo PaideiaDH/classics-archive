@@ -19,5 +19,10 @@
 database.yml
 /public/system
 /public/packs
-/public/packs-test
+/public/assets/dataTables
+/public/assets/filterrific
+/public/assets/font-awesome
+/public/assets/jquery-ui
+/public/assets/select2-4.0.3
 /node_modules
+/vendor
