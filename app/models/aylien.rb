@@ -1,5 +1,6 @@
 # professional article scraping
 require 'faraday'
+require 'iconv'
 
 module Aylien
   include AuthorName
@@ -24,7 +25,7 @@ module Aylien
 
   def get_html(url)
     page = Faraday.get(url)
-    Nokogiri::HTML(page.body)
+    Nokogiri::HTML(page.body, nil, 'UTF-8')
   end
 
   def article_info(url)
