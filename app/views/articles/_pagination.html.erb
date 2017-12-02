@@ -3,7 +3,7 @@
   <% if @p > 1 %>
     <a href="/articles?<%= @query %>&page=<%= @p - 1 %>" class="pagination-button">
       <i class="fa fa-chevron-left" aria-hidden="true"></i>
-      Previous
+      Previous Page
     </a>
     &nbsp
   <% else %>
@@ -28,7 +28,7 @@
   <% if @p * 15 < @all_articles.length %>
     &nbsp
     <a href="/articles?<%= @query %>&page=<%= @p + 1 %>" class="pagination-button">
-      Next
+      Next Page
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </a>
   <% else %>
