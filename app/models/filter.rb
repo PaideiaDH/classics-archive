@@ -10,9 +10,12 @@ module Filter
           cal_start = start_date.strftime('%D')
           cal_end = end_date.strftime('%D')
           fils << "published between #{cal_start} and #{cal_end}"
-        elsif k == 'with_tag'
+        elsif k == "with_tag"
           or_statement = listify v, 'or'
           fils << "with tag #{or_statement}"
+        elsif k == 'of_type'
+          or_statement = listify v, 'or'
+          fils << "of type #{or_statement}"
         elsif k == 'with_all_tags'
           and_statement = listify v
           fils << "with tags #{and_statement}"

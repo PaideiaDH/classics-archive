@@ -148,12 +148,12 @@ class Article < ActiveRecord::Base
   })
 
   scope :of_type, (lambda { |query|
-    query = query.split(',').reject(&:empty?).uniq
-
+    ids = []
     query.each do |content_type|
-      ids = search(
+      ids << search(
         content_type,
-        fields: [:type_of]
+        fields: [:type_of],
+        match: :phrase
       ).map(&:id)
     end
 

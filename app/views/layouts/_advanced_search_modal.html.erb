@@ -85,11 +85,15 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="filterrific_of_type" class="col-sm-3 col-form-label col-form-label-lg">
+          <label class="col-sm-3 col-form-label col-form-label-lg">
             Content Type
           </label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control form-control-lg" id="filterrific_of_type" name="filterrific[of_type]" placeholder="">
+          <div id="with_tag" class="col-sm-9">
+            <select id="filterrific_of_type" name="filterrific[of_type][]" class="form-control form-control-lg" multiple="multiple">
+              <% CONTENT_TYPES.each do |type| %>
+                <option value="<%= type %>"><%= type %></option>
+              <% end %>
+            </select>
           </div>
         </div>
       </div>
@@ -105,7 +109,6 @@
 $(function() {
   var auths = $('#allAuthors').data('allauthors').split(',')
   var pubs = $('#allPubs').data('allpublishers').split(',')
-  var types = $('#contentTypes').data('contenttypes').split(',')
   var start = moment().subtract(29, 'days');
   var end = moment();
 
@@ -132,8 +135,6 @@ $(function() {
     placeholder: "Journal Article, Blog Post",
     tags: true,
     theme: "bootstrap",
-    data: types,
-    multiple: true,
     width: '100%',
   })
 
