@@ -12,7 +12,7 @@ class Article < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
   has_attached_file :image,
-                    default_url: '/images/:style/missing.png',
+                    default_url: 'https://github.com/PaideiaDH/classics-archive/blob/master/app/assets/images/owl.png?raw=true',
                     preserve_files: true,
                     styles: {
                       card_top: '500x500'

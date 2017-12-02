@@ -48,7 +48,7 @@ module Aylien
 
     title = page_json['title']
 
-    default_image = 'https://static1.squarespace.com/static/57600285f699bb9740cbd53b/t/57cf0af315d5dba471549ecb/1473186552334/'
+    default_image = 'https://github.com/PaideiaDH/classics-archive/blob/master/app/assets/images/owl.png?raw=true'
 
     image = page_json['image'].blank? ? default_image : page_json['image']
 
