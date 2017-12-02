@@ -12,11 +12,13 @@ export default class Article extends React.Component {
     return (
       <div className="card full-card" data-item-tags={tags}>
         {featured}
-        <img
-          className="card-img-top"
-          src={article.image.replace('original', 'card_top')}
-          alt={imageTitle}
-        />
+        <a href={article.url} className="external-link" target="_blank">
+          <img
+            className="card-img-top"
+            src={article.image.replace('original', 'card_top')}
+            alt={imageTitle}
+          />
+        </a>
         <div>
           <div className="card-header">
             <a href={article.url} className="link-body" target="_blank">
