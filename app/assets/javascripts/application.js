@@ -24,7 +24,6 @@
 //= require popper
 //= require bootstrap
 //= require dataTables/jquery.dataTables
-//= require daterangepicker
 //= require select2-full
 //= require filterrific/filterrific-jquery
 //= require_tree .
