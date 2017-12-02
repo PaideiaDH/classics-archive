@@ -25,6 +25,13 @@ div[data-react-class=Grid] {
   text-align: center;
 }
 
+// CAROUSEL STYLES
+.carousel-control-prev, .carousel-control-next {
+  &:hover {
+    color: $paideia-dark-blue;
+  }
+}
+
 .carousel-item {
   height: 500px;
   overflow: hidden;
@@ -32,11 +39,15 @@ div[data-react-class=Grid] {
 }
 
 .carousel-caption {
-  background: rgba(210,126,48,0.95);
+  text-align: center;
+  line-height: 100%;
   a {
-    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
     color: white;
-    font-size: 150%;
+    font-size: 250%;
+    text-shadow: 0 0 8px black;
   }
 }
 

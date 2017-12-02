@@ -15,13 +15,15 @@ export default class FeaturedArticle extends React.Component {
         <div className="carousel-caption d-none d-md-block">
           <i className="fa fa-external-link pull-right" aria-hidden="true" />
           <a href={article.url} target="_blank">
-            <h3>
-              {article.title}
-            </h3>
-            <h5>
-              by {fullName} for {article.site_name}
-            </h5>
             <p>
+              <b>
+                {article.title}
+              </b>
+              <br />
+              <small>
+                by {fullName} for {article.site_name}
+              </small>
+              <br />
               {article.description}
             </p>
           </a>
