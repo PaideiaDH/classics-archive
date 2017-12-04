@@ -1,14 +1,20 @@
 <style>
   body {
-    border: 30px solid rgb(210,126,48);
     padding: 20px;
     text-align: center;
     font-family: monospace;
-    background-color: rgba(210,126,48, 0.7);
+    background: rgb(210,126,48);
+    background: -webkit-linear-gradient(rgba(210,126,48,0.4), rgb(210,126,48));
+    background: -o-linear-gradient(rgba(210,126,48,0.4), rgb(210,126,48));
+    background: -moz-linear-gradient(rgba(210,126,48,0.4), rgb(210,126,48));
+    background: linear-gradient(rgba(210,126,48,0.4), rgb(210,126,48));
   }
   .error {
     max-width: 576px;
     display: inline-block;
+    background: white;
+    padding: 20px;
+    border: 10px solid rgb(210,126,48);
   }
   h1 {
     font-size: 60px;
@@ -34,6 +40,7 @@
   }
 </style>
 <img src="<%= asset_path 'square_owl' %>" id="uhOhOwl"/>
+<br />
 <br />
 <div class="error">
   <h1>
