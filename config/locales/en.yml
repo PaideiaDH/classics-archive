@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+   exception_handler:
+    not_found: "THAT'S AN ERROR"
+    unauthorized: "You need to login to continue"
+    internal_server_error: "Congratulations! You have triggered a %{status} error."

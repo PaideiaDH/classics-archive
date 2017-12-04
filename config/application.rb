@@ -11,6 +11,13 @@ Bundler.require(*Rails.groups)
 module ClassicsArchive
   class Application < Rails::Application
     config.encoding = "utf-8"
+    config.exception_handler = {
+      dev: true,
+      layouts: {
+        404 => 'exception'
+      }
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
