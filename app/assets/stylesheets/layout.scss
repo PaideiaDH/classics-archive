@@ -33,9 +33,10 @@ div[data-react-class=Grid] {
 }
 
 .carousel-item {
-  height: 500px;
+  height: 455px;
   overflow: hidden;
   width: 100%;
+  box-shadow: 0 0 3px red;
 }
 
 .carousel-caption {
@@ -53,6 +54,10 @@ div[data-react-class=Grid] {
 
 .carousel-image {
   width: 100%;
+}
+
+.carousel-inner {
+  margin: 30px;
 }
 
 .turbolinks-progress-bar {
