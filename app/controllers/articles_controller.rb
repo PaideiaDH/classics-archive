@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
     end
   rescue OpenURI::HTTPError, RuntimeError => e
     copy_params = article_params
-    copy_params['image'] = 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Paideiainstitutelogo.jpg/250px-Paideiainstitutelogo.jpg'
+    copy_params['image'] = 'https://github.com/PaideiaDH/classics-archive/blob/master/app/assets/images/owl.png?raw=true'
     copy_params['image_credit'] = 'NEEDS IMAGE AND CREDIT'
     @article_without_image = Article.new(copy_params)
     if @article_without_image.save
