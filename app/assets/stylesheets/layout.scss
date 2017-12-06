@@ -26,33 +26,28 @@ div[data-react-class=Grid] {
 }
 
 // CAROUSEL STYLES
+.carousel-inner {
+  max-height: 455px;
+  overflow: hidden;
+  text-align: center;
+}
+
 .carousel-control-prev, .carousel-control-next {
   &:hover {
     color: $paideia-dark-blue;
   }
 }
 
-.carousel-item {
-  height: 455px;
-  overflow: hidden;
-  width: 100%;
-  box-shadow: 0 0 3px red;
-}
-
 .carousel-caption {
   text-align: center;
-  line-height: 100%;
   a {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
     color: white;
     font-size: 250%;
     text-shadow: 0 0 8px black;
   }
 }
 
-.carousel-image {
+img.carousel-image {
   width: 100%;
 }
 

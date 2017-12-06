@@ -21,7 +21,7 @@ export default class Carousel extends React.Component {
       )
     })
     return (
-      <div className="container">
+      <div className="container" id="banner">
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
             {indicators}
