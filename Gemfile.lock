@@ -56,15 +56,6 @@ GIT
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
 
-GIT
-  remote: https://github.com/twbs/bootstrap-rubygem
-  revision: 5ae93e717519e910360350e6c0396efae8aff716
-  specs:
-    bootstrap (4.0.0.beta2.1)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
-      sass (>= 3.5.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -121,6 +112,10 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bindex (0.5.0)
+    bootstrap (4.0.0.beta2.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     buftok (0.2.0)
     builder (3.2.3)
     case_transform (0.2)
@@ -398,7 +393,7 @@ DEPENDENCIES
   acts-as-taggable-on!
   autoprefixer-rails
   aylien_text_api
-  bootstrap!
+  bootstrap (~> 4.0.0.beta2.1)
   certified
   coffee-rails
   daemons

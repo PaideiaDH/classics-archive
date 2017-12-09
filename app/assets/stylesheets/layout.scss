@@ -1,9 +1,6 @@
 @import "colors";
 
 .input-group {
-  // [id^=filterrific] {
-  //   border-right: 0px;
-  // }
   .input-group-addon {
     padding: 6px 5px 1px 5px;
     border-left: 0px;
@@ -11,6 +8,7 @@
     color: #ccc;
   }
 }
+
 .clear-input {
   cursor: pointer;
 }
@@ -23,35 +21,6 @@ div[data-react-class=Grid] {
   margin: auto;
   width: 100%;
   text-align: center;
-}
-
-// CAROUSEL STYLES
-.carousel-inner {
-  max-height: 455px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.carousel-control-prev, .carousel-control-next {
-  &:hover {
-    color: $paideia-dark-blue;
-  }
-}
-
-.carousel-caption {
-  text-align: center;
-  a {
-    color: white;
-    text-shadow: 0 0 8px black;
-  }
-}
-
-img.carousel-image {
-  width: 100%;
-}
-
-.carousel-inner {
-  margin: 30px;
 }
 
 .turbolinks-progress-bar {

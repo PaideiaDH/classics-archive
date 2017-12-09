@@ -2,8 +2,8 @@
 
 #filterrific_with_query {
   position: absolute;
-  width: 400px;
-  left: calc(50% - 200px);
+  width: 350px;
+  left: calc(50% - 175px);
   &:focus {
     border-color: $paideia-orange;
     box-shadow:inset 0 0 1px 1px $paideia-orange;

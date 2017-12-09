@@ -8,26 +8,23 @@ export default class FeaturedArticle extends React.Component {
     const fullName = `${article.author_first_name} ${article.author_last_name}`
     const imageTitle = `${article.title} by ${fullName}`
     const tags = article.tags.map(t => t.name).join(",")
-    const classs=this.props.classs
+    const classs = this.props.className
     return (
       <div className={classs}>
-        <img className="d-block w-100 carousel-image" src={article.image} alt={imageTitle} />
-        <div className="carousel-caption d-none d-md-block">
-          <i className="fa fa-external-link pull-right" aria-hidden="true" />
-          <a href={article.url} target="_blank">
+        <a href={article.url} target="_blank">
+          <img className="d-flex w-100" src={article.image} alt={imageTitle} />
+
+          <div className="carousel-caption d-none d-flex h-100 align-items-center justify-content-center">
             <p>
-              <b>
+              <h1>
                 {article.title}
-              </b>
-              <br />
-              <small>
-                by {fullName} for {article.site_name}
-              </small>
+              </h1>
+              by {fullName} for {article.site_name}
               <br />
               {article.description}
             </p>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     )
   }

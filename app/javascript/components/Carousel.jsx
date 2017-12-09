@@ -17,16 +17,18 @@ export default class Carousel extends React.Component {
         <FeaturedArticle
           article={a}
           className={i == 0? 'carousel-item active' : 'carousel-item'}
+          key={a.id}
+          ind={i}
         />
       )
     })
     return (
-      <div className="container" id="banner">
+      <div id="banner" className="container">
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
             {indicators}
           </ol>
-          <div className="carousel-inner">
+          <div className="carousel-inner text-center">
             {articles}
           </div>
           <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
