@@ -49,7 +49,6 @@ export default class Grid extends React.Component {
     this.getCardWidth();
     window.addEventListener('resize', this.getCardWidth);
   }
-  debugger
 
   render() {
     let items = [];
