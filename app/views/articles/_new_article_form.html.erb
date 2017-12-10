@@ -58,12 +58,12 @@
             <% end %>
           </div>
         </div>
-        <div id="invisible" data-anytags="<%= @parsed[:tags].join(',') unless @parsed[:tags].nil? %>"></div>
+        <div id="invisible" data-anytags="<%= @parsed[:tags].join(',') unless @parsed[:tags].nil? %>" data-pubs="<%= @pubs %>"></div>
         <div class="form-group row">
           <%= render 'tags_tooltip', f: f %>
           <div class="col-9">
             <div class="row">
-              <%= f.select :tag_list, Topic.all.map(&:name), { include_blank: false }, { class: "js-example-tags form-control", multiple: "multiple" } %>
+              <%= f.select :tag_list, Topic.all.map(&:name), { include_blank: false }, { class: "tags form-control", multiple: "multiple" } %>
             </div>
           </div>
         </div>
@@ -101,12 +101,21 @@
   </div>
 </div>
 <script>
-var k = $('#invisible').data('anytags')
+var tagOptions = createDataArray($('#invisible').data('anytags'))
+var pubs = $('#invisible').data('pubs').split(',')
 
-$(".js-example-tags").select2({
+$('#article_site_name').autocomplete({
+  source: pubs,
+  minLength: 0,
+  close: function(e, ui) {
+    $(this).blur()
+  }
+})
+
+$(".tags").select2({
   tags: true,
   theme: "bootstrap",
-  data: createDataArray(k)
+  data: tagOptions
 })
 
 </script>

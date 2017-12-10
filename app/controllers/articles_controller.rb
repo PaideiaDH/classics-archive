@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
 
     @parsed = article_info(params[:user_url]) if params[:user_url]
 
+    @pubs = Article.all.map(&:site_name).uniq.join(',')
+
     @existing = Article.where(url: @parsed[:url])[0]
     if @existing
       flash[:info] = "Great minds think alike... this article has already been submitted as of #{@existing.created_at.strftime('%e %B %Y')}!"
