@@ -26,5 +26,4 @@
 //= require dataTables/jquery.dataTables
 //= require select2-full
 //= require filterrific/filterrific-jquery
-//= require components
 //= require bootstrap-sprockets

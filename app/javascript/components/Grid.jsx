@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import StackGrid from "react-stack-grid";
 import Article from './Article';
 import FeaturedArticle from './FeaturedArticle';
-import Loader from './Loader';
 
 export default class Grid extends React.Component {
   constructor(props) {
