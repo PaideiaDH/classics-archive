@@ -64,8 +64,8 @@ export default class Grid extends React.Component {
         <br />
         <StackGrid
           columnWidth={this.state.cardWidth}
-          gutterWidth={12}
-          gutterHeight={12}
+          gutterWidth={16}
+          gutterHeight={16}
           monitorImagesLoaded={true}
         >
           {items}

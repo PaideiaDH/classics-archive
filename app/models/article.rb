@@ -224,7 +224,7 @@ class Article < ActiveRecord::Base
   end
 
   def pretty_date
-    published_time.strftime('%d %B %Y')
+    published_time.strftime('%e %b %Y')
   end
 
   def search_data

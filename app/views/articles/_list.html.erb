@@ -7,7 +7,9 @@
   %>
 </div>
 
-<%= render 'pagination', top: true %>
+<div class="container">
+  <%= render 'pagination', top: true %>
+</div>
 
 <span class="filterrific_spinner" style="display: none">
   <img class="loader" src="<%= asset_path 'ellipsis.gif' %>" />
@@ -21,7 +23,6 @@
     {prerender: true}
   %>
 </div>
-
 <%= render 'pagination', top: false %>
 <script>
 $('#currentFilters').text("<%= @current_filters %>")

@@ -1,12 +1,7 @@
 module ApplicationHelper
-
-  def row_color(article)
-    article.approved ? "bg-success" : "bg-warning"
-  end
-
   def acronym(name)
      name.scan(/[[:upper:]]/).join("")
-   end
+  end
 
   def get_text(url)
     boilerpipe_url = "https://boilerpipe-web.appspot.com/extract?url=#{URI.escape(url)}&extractor=ArticleExtractor&output=text&extractImages=&token="

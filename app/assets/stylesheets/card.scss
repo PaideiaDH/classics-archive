@@ -60,12 +60,10 @@
   color: #777;
 }
 
-
 .card {
-  background-color: $paideia-light-grey;
   max-width: 100%;
-  border: 1px solid #E2E2E2 !important;
-  border-radius: 4px !important;
+  border: 0px !important;
+  border-radius: 0px !important;
   margin: auto;
   position: relative;
   i.site_name {
@@ -134,7 +132,7 @@ p.card-text {
 
 .card-img-top {
 	max-width: 100%;
-  border-radius: 4px !important;
+  border-radius: 0px !important;
   border-bottom: 2px solid $paideia-orange;
 }
 
@@ -153,10 +151,6 @@ p.card-text {
 
 .card-title {
   margin-bottom: 0px !important;
-  // color: $paideia-dark-blue;
-  // &:hover {
-  //   color: $paideia-blue;
-  // }
 }
 
 h5.link-body, a {
@@ -197,12 +191,13 @@ label.btn-secondary, .tag {
 
 .card-block {
   padding: 8px 8px 8px 5px !important;
+  background-color: #F7F7F7 !important;
 }
 
 .card-footer {
-  padding: 0px 8px 8px 8px !important;
+  padding: 8px !important;
   background-color: inherit;
   color: gray;
-	border-top: none;
+	border-top: none !important;
   font-size: 14px;
 }

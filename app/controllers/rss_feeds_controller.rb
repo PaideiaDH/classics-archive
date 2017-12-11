@@ -32,6 +32,9 @@ class RssFeedsController < ApplicationController
     end
 
     def rss_feed_params
-      params.require(:rss_feed).permit(:name, :feed_url)
+      params.require(:rss_feed).permit(
+        :name,
+        :feed_url
+      )
     end
 end

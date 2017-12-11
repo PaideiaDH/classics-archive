@@ -1,5 +1,4 @@
 ## links collected from twitter, friday link dumps, fb (classics int'l), rss in the future
-# require 'pry'
 
 class DumpedLinksController < ApplicationController
   def new

@@ -11,5 +11,4 @@ module TagsHelper
       object.reload
     end
   end
-
 end
