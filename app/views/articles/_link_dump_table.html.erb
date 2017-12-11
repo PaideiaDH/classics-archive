@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Publication</th>
       <th>Archived</th>
       <th>Source</th>
       <th>Actions</th>
@@ -15,6 +16,9 @@
           <a href="<%= a.url %>" target="_blank">
             <i class='fa fa-external-link'></i>
           </a>
+        </td>
+        <td>
+          <%= a.publication %>
         </td>
         <td>
           <%= a.created_at.strftime("%e %B %Y") %>
