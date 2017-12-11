@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   root to: 'home#show'
 
-  get 'sandbox', to: 'home#sandbox'
-
   resources :articles
   resources :rss_feeds, only: %i[new create destroy]
   resources :topics, only: %i[new create destroy]
