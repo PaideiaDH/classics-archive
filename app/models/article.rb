@@ -227,6 +227,10 @@ class Article < ActiveRecord::Base
     published_time.strftime('%e %b %Y')
   end
 
+  def self.tag_options
+    (ActsAsTaggableOn::Tag.all.map &:name) + (Topic.all.map(&:name)).uniq
+  end
+
   def search_data
     attributes.merge(
       author_full_name: author_full_name,
