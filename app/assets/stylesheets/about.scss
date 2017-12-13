@@ -1,3 +1,5 @@
+@import "colors";
+
 .jumbotron {
   padding: 32px;
   background-color: white;
@@ -17,13 +19,29 @@ ul.brain-trust {
     background-color: white;
     img {
       width: 100%;
-      max-width: 200px;
+      max-width: 300px;
     }
   }
 }
 
 div#about-page {
-  h4 {
+  h3 {
     text-align: center;
+  }
+  p {
+    font-size: 20px;
+  }
+  a {
+    color: $paideia-dark-blue;
+    i {
+      color: white;
+    }
+    &:hover {
+      i {
+        color: $paideia-orange;
+      }
+      text-decoration: none;
+      color: $paideia-orange;
+    }
   }
 }
