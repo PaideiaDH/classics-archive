@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-sm-12">
+        <%= render 'wayback_status', article: @parsed %>
         <div class="form-group row">
           <%= f.label :title, required: true, class: "col-3 col-form-label" %>
           <div class="col-9">

@@ -93,6 +93,7 @@ class ArticlesController < ApplicationController
       :calais_tags,
       :board_list,
       :site_text,
+      :wayback_id,
       :boilerpipe_text,
       :approved,
       :approved_by,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118011825) do
+ActiveRecord::Schema.define(version: 20180102214752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20171118011825) do
     t.boolean "featured"
     t.datetime "featured_date"
     t.string "calais_tags", default: [], array: true
+    t.string "wayback_id"
     t.index "boilerpipe_text gist_trgm_ops", name: "text_similarity_idx", using: :gist
     t.index ["title"], name: "index_articles_on_title"
   end

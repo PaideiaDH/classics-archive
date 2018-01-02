@@ -9,6 +9,7 @@ module Aylien
   include FindTags
   include Publisher
   include TimePublished
+  include Wayback
 
   def aylien_creator(url)
     conn = Faraday.new(url: 'https://api.aylien.com')
@@ -31,6 +32,7 @@ module Aylien
   def article_info(url)
     page_json = JSON.parse(aylien_creator(url))
     page_html = get_html(url)
+    wayback = get_wayback_id(url)
 
     scraped_tags = find_tags(page_html)
     calais_tags = calais(page_json['article'])
@@ -73,7 +75,8 @@ module Aylien
       published_time: published_time,
       tags: tags,
       site_text: page_html,
-      boilerpipe_text: boilerpipe_text
+      boilerpipe_text: boilerpipe_text,
+      wayback_id: wayback
     }
     @parsed
   end
