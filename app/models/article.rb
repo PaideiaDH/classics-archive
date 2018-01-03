@@ -224,7 +224,7 @@ class Article < ActiveRecord::Base
   end
 
   def pretty_date
-    published_time.strftime('%e %b %Y')
+    published_time.strftime('%e %B %Y')
   end
 
   def self.tag_options

@@ -1,5 +1,23 @@
 @import 'colors';
 
+a.permanent-link {
+  img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    max-height: 16px;
+  }
+  i {
+    color: $paideia-card-grey;
+  }
+  &:hover {
+    cursor: alias;
+    text-decoration: none;
+    i {
+      color: $paideia-orange;
+    }
+  }
+}
+
 .ribbon {
   width: 150px;
   height: 150px;
@@ -67,7 +85,7 @@
   margin: auto;
   position: relative;
   i.site_name {
-    color: $paideia-light-grey;
+    color: $paideia-card-grey;
   }
   i.fa-external-link, i.author {
     color: #F7F7F7;

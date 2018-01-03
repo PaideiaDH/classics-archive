@@ -44,6 +44,11 @@ export default class Article extends React.Component {
               {' '}
               <i className="fa fa-user-circle author" aria-hidden="true"></i>
             </label>
+            <br />
+            <a className="published_time">
+              {'on '}
+              {article.pretty_date}
+            </a>
             <p className="card-text link-body">
               <a href={article.url} className="link-body" target="_blank">
                 {article.description}
@@ -63,10 +68,10 @@ export default class Article extends React.Component {
             )}
           </div>
           <div className="card-footer">
-            <a className="published_time">
-              <i className="fa fa-clock-o" aria-hidden="true"></i>
+            <a href={`http://www.web.archive.org${article.wayback_id}`} target="_blank"  className="permanent-link">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Wayback_Machine_logo_2010.svg/320px-Wayback_Machine_logo_2010.svg.png" />
               {' '}
-              {article.pretty_date}
+              <i className="fa fa-institution" aria-hidden="true"></i>
             </a>
             <label className="site_name pull-right">
               <i className="fa fa-newspaper-o site_name" aria-hidden="true"></i>
