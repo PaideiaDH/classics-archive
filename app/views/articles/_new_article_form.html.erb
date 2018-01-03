@@ -1,8 +1,14 @@
 <%= form_for @article, multipart: true do |f| %>
 <div class="container">
   <div class="row">
+    <div class="col-12 col-centered">
+      <%= render 'wayback_status', article: @parsed, f: f %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
     <div class="col-md-6 col-sm-12">
-        <%= render 'wayback_status', article: @parsed %>
         <div class="form-group row">
           <%= f.label :title, required: true, class: "col-3 col-form-label" %>
           <div class="col-9">

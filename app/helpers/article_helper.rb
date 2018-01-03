@@ -1,4 +1,6 @@
 module ArticleHelper
+  include Wayback
+
   def search_page_info
     @filterrific = initialize_filterrific(
       Article.where(approved: true),
@@ -71,6 +73,8 @@ module ArticleHelper
     end
 
     @parsed = article_info(params[:user_url]) if params[:user_url]
+
+    @wayback_id = get_wayback_id(params[:user_url]) if @parsed[:wayback_id].nil?
 
     @pubs = Article.all.map(&:site_name).uniq.join(',')
 

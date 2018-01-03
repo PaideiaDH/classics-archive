@@ -1,15 +1,11 @@
 <% if @parsed[:wayback_id] %>
-  <div class="form-group row success">
-    <div class="col-12">
-      <%= f.hidden_field :wayback_id, value: @parsed[:wayback_id], required: true %>
-      <a href="">Article archived in Wayback Machine</a>
-    </div>
+  <div class="alert alert-success">
+    <%= f.hidden_field :wayback_id, value: @parsed[:wayback_id] %>
+    <a href="http://www.web.archive.org<%= @parsed[:wayback_id] %>">Article archived in Wayback Machine</a>
   </div>
 <% else %>
-  <div class="form-group row success">
-    <div class="col-12">
-      <%= f.hidden_field :wayback_id, value: @parsed[:wayback_id], required: true %>
-      <a href="">Article archived in Wayback Machine</a>
-    </div>
+  <div class="alert alert-warning">
+    <%= f.hidden_field :wayback_id, value: @wayback_id %>
+    <a href="http://www.web.archive.org<%= @wayback_id %>">Article archived in Wayback Machine</a>
   </div>
 <% end %>
