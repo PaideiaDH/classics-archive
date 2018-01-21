@@ -1,7 +1,7 @@
 @import 'colors';
 
 #top-nav {
-  min-height: 100px;
+  min-height: 103px;
   background-color: white;
   padding: 0px calc(10%);
 }
@@ -30,12 +30,15 @@
   color: black;
   display: inline!important;
   font-size: 14px;
+  padding: 0.5em 1em 0.25em 1em !important;
+  border-bottom: 0.25em solid $paideia-nav-grey;
   i {
     color: $paideia-blue;
   }
   &:hover {
-    background-color: $paideia-light-blue;
+    border-bottom: 0.25em solid $paideia-blue;
     cursor: pointer;
+    color: $paideia-hover-nav-blue;
   }
 }
 
