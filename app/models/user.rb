@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    email.ends_with?('@paideia-institute.org') || id === 15 || id === 23
+    email.ends_with?('@paideia-institute.org') || ADMINS.include? id
 
   end
 end

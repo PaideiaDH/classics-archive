@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+ADMINS = [32, 15, 23]
 
 RSS_SOURCES = [
   'https://eidolon.pub/feed',
