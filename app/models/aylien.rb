@@ -29,14 +29,20 @@ module Aylien
     Nokogiri::HTML(page.body, nil, 'UTF-8')
   end
 
+  def get_links(html)
+    links = html.css('a')
+    links.map {|link| link.attribute('href').to_s}.uniq.sort.delete_if {|href| href.empty?}
+  end
+
   def article_info(url)
     page_json = JSON.parse(aylien_creator(url))
     page_html = get_html(url)
     wayback = get_wayback_id(url)
-
     scraped_tags = find_tags(page_html)
     calais_tags = calais(page_json['article'])
     tags = calais_tags.concat(scraped_tags).flatten.map(&:titlecase)
+    binding.pry
+    links = get_links(page_html)
 
     author = page_json['author'].blank? ? author_name(page_html, url) : page_json['author']
     if author.nil?
