@@ -35,7 +35,7 @@
         <% if a.approved_by %>
           <%= User.exists?(a.approved_by) ? acronym(User.find(a.approved_by).name) : a.approved_by %>
         <% else %>
-          <%= link_to "Review", edit_article_path(a.id) %>
+          <%= link_to "Needs Review", edit_article_path(a.id) %>
         <% end %>
       </td>
     </tr>

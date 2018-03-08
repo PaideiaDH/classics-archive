@@ -28,11 +28,11 @@
         </td>
         <td>
           <%= link_to new_article_path(user_url: a.url, ldid: a.id), class: 'text-success' do %>
-            <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+            Review
           <% end %>
           &nbsp
           <%= link_to dumped_links_reject_path(id: a.id), class: 'text-danger' do %>
-            <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+            Reject
           <% end %>
         </td>
       </tr>
