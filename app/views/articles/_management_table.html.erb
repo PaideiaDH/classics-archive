@@ -28,14 +28,14 @@
         <%= a.created_at.strftime("%e %B %Y") %>
       </td>
       <td>
-        <%= link_to "Edit", edit_article_path(a.id) %>
+        <%= link_to "Review", edit_article_path(a.id) %>
         <%= link_to "Delete", article_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
       <td>
         <% if a.approved_by %>
           <%= User.exists?(a.approved_by) ? acronym(User.find(a.approved_by).name) : a.approved_by %>
         <% else %>
-          <%= link_to "not yet", edit_article_path(a.id) %>
+          <%= link_to "Review", edit_article_path(a.id) %>
         <% end %>
       </td>
     </tr>
