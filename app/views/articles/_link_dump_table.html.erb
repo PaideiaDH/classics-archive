@@ -3,8 +3,8 @@
     <tr>
       <th>Title</th>
       <th>Publication</th>
-      <th>Archived</th>
       <th>Source</th>
+      <th>Archived</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -32,7 +32,7 @@
           <% end %>
           &nbsp
           <%= link_to dumped_links_reject_path(id: a.id) do %>
-            Reject
+            Delete
           <% end %>
         </td>
       </tr>
