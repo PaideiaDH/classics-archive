@@ -41,7 +41,6 @@ module Aylien
     scraped_tags = find_tags(page_html)
     calais_tags = calais(page_json['article'])
     tags = calais_tags.concat(scraped_tags).flatten.map(&:titlecase)
-    binding.pry
     links = get_links(page_html)
 
     author = page_json['author'].blank? ? author_name(page_html, url) : page_json['author']
