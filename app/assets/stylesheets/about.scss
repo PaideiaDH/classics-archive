@@ -45,3 +45,13 @@ div#about-page, div#methodology {
     }
   }
 }
+
+img.institution {
+  height: 150px;
+  display: block;
+  margin: auto;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
