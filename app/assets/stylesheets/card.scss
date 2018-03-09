@@ -184,6 +184,7 @@ label.btn-secondary, .tag {
 	border: 0.5px solid $paideia-blue;
 	color: $paideia-blue;
 	margin-bottom: 3px;
+  border-radius: 10px !important;
 	&:hover {
 		cursor: pointer;
 		background-color: $paideia-blue;
@@ -198,8 +199,9 @@ label.btn-secondary, .tag {
 }
 
 .tag.btn-sm {
-  padding: 0px 3px 1px 3px !important;
-  max-height: 21px;
+  padding: 0px 6px 6px 6px !important;
+  max-height: 23px;
+  font-weight: 300 !important;
 }
 
 .card-header {
