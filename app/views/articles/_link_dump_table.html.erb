@@ -21,10 +21,10 @@
           <%= a.publication %>
         </td>
         <td>
-          <%= a.created_at.strftime("%e %B %Y") %>
+          <%= a.submission_route %>
         </td>
         <td>
-          <%= a.submission_route %>
+          <%= a.created_at.strftime("%e %B %Y") %>
         </td>
         <td>
           <%= link_to new_article_path(user_url: a.url, ldid: a.id) do %>
