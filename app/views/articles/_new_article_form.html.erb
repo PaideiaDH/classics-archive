@@ -96,6 +96,7 @@
 
       <% if current_user && current_user.admin? %>
         <%= f.hidden_field :approved, value: true %>
+        <%= f.hidden_field :approved_by, value: current_user.id %>
         <%= f.submit "Add Article to Feed", class: "btn btn-submit" %>
       <% else %>
         <%= f.hidden_field :approved, value: false %>

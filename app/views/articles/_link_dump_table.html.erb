@@ -27,11 +27,11 @@
           <%= a.submission_route %>
         </td>
         <td>
-          <%= link_to new_article_path(user_url: a.url, ldid: a.id), class: 'text-success' do %>
+          <%= link_to new_article_path(user_url: a.url, ldid: a.id) do %>
             Review
           <% end %>
           &nbsp
-          <%= link_to dumped_links_reject_path(id: a.id), class: 'text-danger' do %>
+          <%= link_to dumped_links_reject_path(id: a.id) do %>
             Reject
           <% end %>
         </td>
