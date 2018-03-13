@@ -11,7 +11,7 @@ module ArticleHelper
       }
     ) || return
     @all_articles = @filterrific.find
-    @featured = params[:filterrific] ? [] : @all_articles.select{ |a| a.featured? && a.featured_date.between?(1.weeks.ago.to_datetime,(DateTime.now + 1.week)) }
+    @featured = params[:filterrific] ? [] : FEATURED_ARTICLES
     @all_articles -= @featured
     @articles = Kaminari.paginate_array(@all_articles).page(params[:page])
                         .per(15)
