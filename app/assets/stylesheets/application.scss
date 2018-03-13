@@ -18,12 +18,8 @@
  *= require select2-bootstrap
  *= require dataTables/jquery.dataTables
  *= require material_icons
- */
+*/
 
- /**
-  * style input elements that have a required
-  * attribute and a focus state
-  */
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import 'font-awesome-sprockets';
@@ -109,5 +105,18 @@ input, button, select, optgroup, textarea {
   background-color: $paideia-blue;
   &:hover {
     background-color: $paideia-orange;
+  }
+}
+
+div.card-columns {
+  column-gap: 1rem !important;
+  @include media-breakpoint-only(xs) {
+    column-count: 1;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
   }
 }

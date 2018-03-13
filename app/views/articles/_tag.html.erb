@@ -1,0 +1,13 @@
+<div class="tag-wrap">
+  <label class="btn btn-sm btn-secondary tag">
+    <input
+      type="radio"
+      value="<%=tag.name %>"
+      name="filterrific[with_tag][]"
+      id='<%= "filterrific_with_tag_#{tag.name}" %>'
+      autoComplete="off"
+      style="display:none">
+    </input>
+    <%= tag.name %>
+  </label>
+</div>

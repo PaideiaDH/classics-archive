@@ -13,20 +13,9 @@ module ArticleHelper
     @all_articles = @filterrific.find
     @featured = params[:filterrific] ? [] : FEATURED_ARTICLES
     @all_articles -= @featured
-    @articles = Kaminari.paginate_array(@all_articles).page(params[:page])
-                        .per(15)
-                        .as_json(
-                          methods: %i[
-                            image
-                            tags
-                            pretty_date
-                          ]
-                        )
-    @featured_articles = @featured.as_json(methods: %i[
-                                             image
-                                             tags
-                                             pretty_date
-                                           ])
+    @articles = Kaminari.paginate_array(@all_articles).page(params[:page]).per(15)
+
+    @featured_articles = @featured
     @query = URI.encode_www_form @filterrific.to_hash
     @all_tags = ALL_TAGS
     @all_authors = ALL_AUTHORS

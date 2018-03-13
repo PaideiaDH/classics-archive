@@ -1,11 +1,10 @@
 <% content_for :search_bar do %>
   <%= render 'layouts/search_bar' %>
 <% end %>
-<div class="grid-hook">
-  <%= react_component 'Carousel',
-    articles: @featured_articles
-  %>
-</div>
+
+<% unless featured_articles.length == 0 %>
+  <%= render 'carousel', featured_articles: featured_articles %>
+<% end %>
 
 <div class="container">
   <%= render 'pagination', top: true %>
@@ -15,17 +14,16 @@
   <img class="loader" src="<%= asset_path 'ellipsis.gif' %>" />
 </span>
 
-<div class="container grid-hook">
-  <%= react_component 'Grid',
-    {articles: @articles,
-    numArticles: @all_articles.length,
-    query: @query},
-    {prerender: true}
-  %>
+<div class="container grid card-columns">
+  <br />
+  <% articles.each do |a| %>
+    <%= render 'card', article: a, query: @query, numArticles: @all_articles.length %>
+  <% end %>
 </div>
+
 <%= render 'pagination', top: false %>
+
 <script>
 $('#currentFilters').text("<%= @current_filters %>")
 $('#entriesInfo').text("<%= @page_entries_info %>")
-  ReactRailsUJS.mountComponents('.grid-hook')
 </script>

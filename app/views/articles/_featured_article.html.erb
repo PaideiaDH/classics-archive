@@ -1,0 +1,15 @@
+<div class="carousel-item <%= classs %>">
+  <a href="<%= feat.url %>" target="_blank">
+    <img class="d-flex w-100" src='<%= feat.image %>' alt='<%= "#{feat.title} by #{feat.author_full_name}" %>' />
+    <div class="carousel-caption d-none d-md-block h-100">
+      <h1>
+        <%= feat.title %>
+      </h1>
+      <h5>
+        by <%= feat.author_full_name %> for <%= feat.site_name %>
+        <br />
+        <%= feat.description %>
+      </h5>
+    </div>
+  </a>
+</div>
