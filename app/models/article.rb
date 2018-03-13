@@ -40,7 +40,8 @@ class Article < ActiveRecord::Base
 
     ids = search(
       query,
-      fields: %i[boilerpipe_text calais_tags]
+      fields: %i[boilerpipe_text calais_tags],
+      misspellings: { prefix_length: query.length }
     ).map(&:id)
     where id: ids
   })

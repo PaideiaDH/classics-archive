@@ -14,8 +14,9 @@
   <img class="loader" src="<%= asset_path 'ellipsis.gif' %>" />
 </span>
 
+<br />
+
 <div class="container grid card-columns">
-  <br />
   <% articles.each do |a| %>
     <%= render 'card', article: a, query: @query, numArticles: @all_articles.length %>
   <% end %>
