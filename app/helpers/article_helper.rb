@@ -3,7 +3,7 @@ module ArticleHelper
 
   def search_page_info
     @filterrific = initialize_filterrific(
-      Article.where(approved: true),
+      ALL_ARTICLES.where(approved: true),
       params[:filterrific],
       select_options: {
         sorted_by: Article.options_for_sorted_by,
@@ -28,9 +28,9 @@ module ArticleHelper
                                              pretty_date
                                            ])
     @query = URI.encode_www_form @filterrific.to_hash
-    @all_tags = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).map(&:name)
-    @all_authors = Article.all.select(&:approved?).map(&:author_full_name).uniq.join(',')
-    @all_publishers = Article.all.select(&:approved?).map(&:site_name).uniq.join(',')
+    @all_tags = ALL_TAGS
+    @all_authors = ALL_AUTHORS
+    @all_publishers = ALL_PUBLISHERS
     @p = params[:page].to_i.zero? ? 1 : params[:page].to_i
     @page_entries_info = paginate @all_articles, @p
     @current_filters = describe_filters(@filterrific.to_hash)

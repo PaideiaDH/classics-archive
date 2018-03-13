@@ -24,6 +24,46 @@ module Aylien
     response.body
   end
 
+  # MESSY LOOP TO REGENERATE IMAGES
+  # default_image = 'https://github.com/PaideiaDH/classics-archive/blob/master/app/assets/images/owl.png?raw=true'
+  # rejected = []
+  # Article.all.map(&:id).reverse.each do |article|
+  #   a = Article.find(article)
+  #   begin
+  #   page_json = aylien_creator(a.url)
+  #   j = JSON.parse(page_json)
+  #   img_url = j['image'].blank? ? default_image : j['image']
+  #   a.image_remote_url(img_url)
+  #   rescue OpenURI::HTTPError, RuntimeError => e
+  #     rejected << a.id
+  #     next
+  #   end
+  #   a.save! validate: false
+  # end
+  #
+  # def manual_image(id)
+  #   a = Article.find(id)
+  #   puts a.url
+  #   img_url = gets.chomp
+  #   a.image_remote_url(img_url)
+  #   a.save! validate: false
+  # end
+  #
+  # rejected.each do |r|
+  #   manual_image(r)
+  # end
+
+  # Article.all.each do |a|
+  #   j = JSON.parse(aylien_creator(a.url))
+  #   puts j['publishDate']
+  #   if j['publishDate'].blank?
+  #     next
+  #   else
+  #     a.published_time = j['publishDate'].to_datetime
+  #     a.save! validate:false
+  #   end
+  # end
+
   def get_html(url)
     page = Faraday.get(url)
     Nokogiri::HTML(page.body, nil, 'UTF-8')

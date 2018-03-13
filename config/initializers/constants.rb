@@ -80,3 +80,8 @@ CONTENT_TYPES = [
   'Photography',
   'Interview'
 ].freeze
+
+ALL_ARTICLES = Article.includes(:tags)
+ALL_AUTHORS =  ALL_ARTICLES.select(&:approved?).map(&:author_full_name).uniq.join(',')
+ALL_PUBLISHERS = Article.all.select(&:approved?).map(&:site_name).uniq.join(',')
+ALL_TAGS = ActsAsTaggableOn::Tag.all.order(taggings_count: :desc).map(&:name)

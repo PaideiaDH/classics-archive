@@ -160,7 +160,7 @@ class Article < ActiveRecord::Base
     uniq_ids = ids.flatten.uniq
     where id: uniq_ids
   })
-
+  
   def self.options_for_sorted_by
     [
       ['date published ↓', 'published_on_desc'],

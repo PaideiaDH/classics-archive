@@ -11,4 +11,5 @@ env :OPEN_CALAIS_ID, ENV['OPEN_CALAIS_ID']
 every 15.minutes do
   rake "RSS:update"
   rake "Twitter:update"
+  rake "all_articles:generate"
 end
