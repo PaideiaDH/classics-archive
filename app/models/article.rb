@@ -160,7 +160,7 @@ class Article < ActiveRecord::Base
     uniq_ids = ids.flatten.uniq
     where id: uniq_ids
   })
-  
+
   def self.options_for_sorted_by
     [
       ['date published ↓', 'published_on_desc'],
@@ -181,10 +181,6 @@ class Article < ActiveRecord::Base
       ['length ↑', 'length_asc'],
       ['random ⚄', 'random']
     ]
-  end
-
-  def self.terms
-    Article.all.where(approved: true).map(&:tag_list).flatten.uniq
   end
 
   validates :title,
