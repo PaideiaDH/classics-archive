@@ -77,7 +77,8 @@ module Aylien
   def article_info(url)
     page_json = JSON.parse(aylien_creator(url))
     page_html = get_html(url)
-    wayback = get_wayback_id(url)
+    # TODO: JOIN ARCHIVE-IT TO RESTORE WAYBACK MACHINE FUNCTION
+    # wayback = get_wayback_id(url)
     scraped_tags = find_tags(page_html)
     calais_tags = calais(page_json['article'])
     tags = calais_tags.concat(scraped_tags).flatten.map(&:titlecase)
@@ -121,7 +122,8 @@ module Aylien
       tags: tags,
       site_text: page_html,
       boilerpipe_text: boilerpipe_text,
-      wayback_id: wayback
+      # TODO: JOIN ARCHIVE-IT TO RESTORE WAYBACK MACHINE FUNCTION
+      wayback_id: '/'
     }
     @parsed
   end
