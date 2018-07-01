@@ -4,18 +4,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="author" content="The Paideia Institute">
+  <meta name="description" content="The Online Public Classics Archive is a free, curated repository for modern scholarship about the Classics.">
+  <meta name="og:title" content="Online Public Classics Archive">
+  <meta name="og:image" content="https://github.com/PaideiaDH/classics-archive/blob/master/app/assets/images/owl.png?raw=true">
+  <meta name="og:description" content="The Online Public Classics Archive is a free, curated repository for modern scholarship about the Classics.">
+
 
   <title>Online Public Classics Archive</title>
 
   <!-- Latest compiled and minified CSS -->
-    <link rel="icon" type="image/png" href="/assets/square_owl.png">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= javascript_pack_tag 'application' %>
-    <%= csrf_meta_tags %>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-  </head>
+  <link rel="icon" type="image/png" href="/assets/square_owl.png">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_pack_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
 <body>
   <%= yield :filterrific_form %>
     <nav class="navbar navbar-expand-lg" id="top-nav">
