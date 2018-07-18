@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
   include Pagination
 
   before_action :require_login, only: %i[create edit update destroy manage]
+  # before_action :require_login, only: %i[create edit update destroy]
+
 
   def new
     new_article_action_info
