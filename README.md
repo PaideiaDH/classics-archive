@@ -3,8 +3,6 @@
 ## Description
 The [Online Public Classics Archive](http://opca.paideiainstitute.org/articles) is a research repository for modern scholarship about the Classical world.
 
-Built by [Kamille Delgardo](http://kamille.delgardo.co/) during her 2017 Digital Humanities Fellowship for [The Paideia Institute](http://www.paideiainstitute.org) with co-sponsorship by the [Society for Classical Studies](https://classicalstudies.org/).
-
 ## Methodology
 The Archive was featured at the [2018 Annual Meeting of the Society for Classical Studies in Boston](https://classicalstudies.org/annual-meeting/2018-annual-meeting):
 
@@ -22,23 +20,27 @@ The Archive was featured at the [2018 Annual Meeting of the Society for Classica
 * Jenkins, T. 2015. Antiquity Now: the Classical World in the Contemporary American Imagination. Cambridge.
 
 
-## Technologies Used
-* MVC with [Ruby on Rails 5](https://github.com/rails/rails)
-* Pinterest-style masonry front-end with [React.js](https://reactjs.org/), [Bootstrap 4](https://getbootstrap.com/), and [jQuery](https://jquery.com/)
-* Asset bundling with [Webpack](https://webpack.js.org/)
-* Served with [Apache2](https://httpd.apache.org/) and [Passenger](https://www.phusionpassenger.com/) on the [Rackspace Cloud](https://www.rackspace.com/en-us)
-* [PostgreSQL 9](https://www.postgresql.org/) production database.
-* Robust search, sort and filter with [Filterrific](https://github.com/jhund/filterrific) and [Elasticsearch](https://github.com/ankane/searchkick)
-* Entity tagging with [Reuters OpenCalais API](http://www.opencalais.com/) and [Aylien Text Analysis API](https://aylien.com/)
-* User authentication and authorization with [Google OAuth 2.0](https://developers.google.com/identity/protocols/OpenIDConnect)
-* Tagging with [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) and [Select2](https://select2.org/)
-* Issue tracking, feature management and service through [Jira Software and Service Desk](https://www.atlassian.com/software/jira)
-
 ## Contribute
 Tweet content links to us at [@PublicClassics](https://twitter.com/PublicClassics).
 
 [Share articles with our editorial staff](https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=415150494328-2k2h1o47fql3vh79s3a8ennakbfopqtk.apps.googleusercontent.com&as=-75f34e5f064627b0&destination=http%3A%2F%2Fopca.paideiainstitute.org&approval_state=!ChRDV3JaVk85WmIzWFo5TVkteERMORIfRTVxdWR6SFlEc3NWb1Bud0gtVkU1UUdtam5sRV9CVQ%E2%88%99AHw7d_cAAAAAWg6zs7aGXoVfqF83z_VE57aNioT3GaqG&xsrfsig=AHgIfE_uzUtLEmzk60SDRs6ICdRh-uQRfg&flowName=GeneralOAuthFlow).
 
+## Development
+The OPCA was built by [Kamille Delgardo](http://kamille.delgardo.co/) during her 2017 Digital Humanities Fellowship for [The Paideia Institute](http://www.paideiainstitute.org) with co-sponsorship by the [Society for Classical Studies](https://classicalstudies.org/).
+
 [Suggest features and track bugs](http://104.130.11.126:8080/servicedesk/customer/portal/1) through our Jira Service Desk.
+
+### Technologies Used
+* MVC with [Ruby on Rails 5](https://github.com/rails/rails)
+* [Bootstrap 4](https://getbootstrap.com/), and [jQuery](https://jquery.com/)
+* Asset bundling with [Webpack](https://webpack.js.org/)
+* Served with [Apache2](https://httpd.apache.org/) and [Passenger](https://www.phusionpassenger.com/) on the [Rackspace Cloud](https://www.rackspace.com/en-us)
+* [PostgreSQL 9](https://www.postgresql.org/) production database.
+* Robust search, sort and filter with [Elasticsearch](https://github.com/ankane/searchkick) and [Filterrific](https://github.com/jhund/filterrific)
+* Entity tagging with [Reuters OpenCalais API](http://www.opencalais.com/) and [Aylien Text Analysis API](https://aylien.com/)
+* User authentication and authorization with [Google OAuth 2.0](https://developers.google.com/identity/protocols/OpenIDConnect)
+* Tagging with [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) and [Select2](https://select2.org/)
+* Issue tracking, feature management and service through [Jira Software and Service Desk](https://www.atlassian.com/software/jira)
+
 
 Article metadata shared for scholarship and research purposes under [Fair Use](https://www.copyright.gov/fair-use/more-info.html).

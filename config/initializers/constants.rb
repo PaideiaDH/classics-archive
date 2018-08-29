@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ADMINS = [32, 15, 23, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
 
 RSS_SOURCES = [
