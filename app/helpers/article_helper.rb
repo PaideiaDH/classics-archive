@@ -58,7 +58,8 @@ module ArticleHelper
   def new_article_action_info
     if params[:ldid]
       DumpedLink.destroy(params[:ldid]) if DumpedLink.exists?(params[:ldid])
-      flash[:success] = 'Added from Link Dump'
+      # flash[:success] = 'Added from Link Dump'
+      logger.debug "Removed article #{params[:ldid]} from link dump."
     end
 
     @parsed = article_info(params[:user_url]) if params[:user_url]
