@@ -22,61 +22,102 @@
   <h3>
     Editorial Staff
   </h3>
-  <ul class="brain-trust">
+  <div class="card-deck brain-trust" id="editorial-staff">
     <%= render 'blurb',
-      name: "<a href='https://www.linkedin.com/in/amy-garland-4835b865o' target='_blank'>Amy Garland <i class='fa fa-linkedin' aria-hidden='true'></i></a>".html_safe,
-      title: 'Editorial Staff',
-      blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
-      image: 'amy.jpeg',
+      name: 'Marco Romani Mistretta',
+      online_presence: 'https://www.paideiainstitute.org/institute_staff',
+      title: 'Editor in Chief',
+      blurb_content: "Before joining the Paideia Institute, Marco Romani Mistretta received a PhD in Classical Philology from Harvard University. At Paideia, his main duties include managing Aequora and the Legion Project, developing curricular materials, and co-supervising the Institute’s Summer Humanities Internship. As a classicist, he has taught a number of courses on ancient languages, literature, and philosophy. He has also published research articles on science and technology in the ancient world, as well as on the history of Classical scholarship in modern Europe.
+      ".html_safe,
+      image: 'marco.jpeg',
       icon: 'fa-linkedin'
     %>
     <%= render 'blurb',
-      name: "<a href='https://www.linkedin.com/in/jason-pedicone-16aa8877/' target='_blank'>Jason Pedicone <i class='fa fa-linkedin' aria-hidden='true'></i></a>".html_safe,
+      name: 'Leah Clark',
+      online_presence: 'https://www.linkedin.com/in/leah-c-2293409b/',
+      title: 'Editor',
+      blurb_content: "Leah is a senior Greek and Roman Studies major at Vassar College, and is originally from Tuscaloosa, Alabama. This year she is working as the department's Latin Intern, as well as working on her thesis on film adaptations of the Odyssey that take place in the American south.
+      ".html_safe,
+      image: 'leah.jpeg',
+      icon: 'fa-linkedin'
+    %>
+    <%= render 'blurb',
+      name: 'Jason Pedicone',
+      online_presence: 'https://www.linkedin.com/in/jason-pedicone-16aa8877/',
       title: 'Project Manager',
       blurb_content: 'Jason Pedicone, the co-founder and President of the Paideia Institute, received his Ph.D. in Classics from Princeton University in 2013. Jason has taught courses in Latin, Greek, and the history of Classical Scholarship at the university level in the U.S. and Western Europe, and is an adjunct professor at Brooklyn College and Fordham University. Jason’s research and public speaking focus on public humanities and Latin and Greek pedagogy. Jason received a Fulbright Fellowship for research in Germany in 2004, and a Jacob Javits Fellowship in 2013 to support his graduate work.  In 2015, together with Paideia\'s co-founder, Eric Hewett, Jason was awarded the President’s Award by the Society for Classical Studies for outstanding achievements in promoting the study of Classics. He lives in Manhattan.',
       image: 'jason.jpg',
       icon: 'fa-linkedin'
     %>
     <%= render 'blurb',
-      name: "<a href='https://www.linkedin.com/in/ariane-schwartz-151262b7' target='_blank'>Ariane Schwartz <i class='fa fa-linkedin' aria-hidden='true'></i></a>".html_safe,
+      name: 'Ariane Schwartz',
+      online_presence: 'https://www.linkedin.com/in/ariane-schwartz-151262b7',
       title: 'Adviser',
       blurb_content: "Ariane Schwartz works​ ​in education and management consulting​.​ She taught for several years at Dartmouth, UCLA, and Harvard. She is also Assistant Editor for the I Tatti Renaissance Library. She has co-founded the Society for Early Modern Classical Reception (a Society for Classical Studies affiliate group) and has been involved in several digital humanities initiatives, including <a href='https://qcrit.org/home' target='_blank'>Quantitative Criticism Lab</a> and the OPCA. She received her B.A. and M.A. in Classical Studies from the University of Pennsylvania and Ph.D. in Classical Philology from Harvard University.
       ".html_safe,
       image: 'ariane.jpg',
       icon: 'fa-linkedin'
     %>
-    <%= render 'blurb',
-      name: "<a href='https://www.linkedin.com/in/allison-sugino' target='_blank'>Allison Sugino <i class='fa fa-linkedin' aria-hidden='true'></i></a>".html_safe,
-      title: 'Social Media Coordinator',
-      blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
-      ".html_safe,
-      image: 'allison.jpg',
-      icon: 'fa-linkedin'
-    %>
-  </ul>
+  </div>
   <hr />
   <br />
-  <h3>
-    Website Development
-  </h3>
-  <ul class="brain-trust">
-    <%= render 'blurb',
-      name: "<a href='http://www.kamille.delgardo.co' target='_blank'>Kamille Delgardo <i class='fa fa-external-link' aria-hidden='true'></i></a>".html_safe,
-      title: 'Lead Engineer',
-      blurb_content: 'Kamille earned a BA in Classical Civilizations with a Latin emphasis from UC Berkeley in 2015. She is an alumna of The Paideia Institute\'s 2015 Living Latin in Rome program and has been pursuing web development full-time ever since. She is currently pursuing a second B.A. in Computer Science while working as a staff software engineer for Paideia and research software engineer at the Stanford University School of Medicine. In her spare time she enjoys helping girls and women learn to code and cultivating an ever-expanding garden of unusual plants.',
-      image: 'kamille.jpg',
-      icon: 'fa-external-link'
-    %>
-  </ul>
+  <div class="row">
+    <div class="col-4">
+      <h3>
+        Website
+      </h3>
+      <div class="card-deck brain-trust">
+        <%= render 'blurb',
+          name: 'Kamille Delgardo',
+          online_presence: 'http://www.kamille.delgardo.co',
+          title: 'Lead Engineer',
+          blurb_content: 'Kamille earned a BA in Classical Civilizations with a Latin emphasis from UC Berkeley in 2015. She is an alumna of The Paideia Institute\'s 2015 Living Latin in Rome program and has been pursuing web development full-time ever since. She is currently pursuing a second B.A. in Computer Science. In her spare time she enjoys camping, astrophotography, training her terrier, and cultivating an ever-expanding garden of unusual plants.',
+          image: 'kamille.jpg',
+          icon: 'fa-external-link'
+        %>
+      </div>
+    </div>
+    <div class="col-8">
+      <h3>
+        Past Contributors
+      </h3>
+      <div class="card-deck" id="past-contributors">
+        <%= render 'blurb',
+          name: 'Amy Garland',
+          online_presence: 'https://www.linkedin.com/in/amy-garland-4835b865o',
+          title: 'Editorial Staff',
+          blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
+          image: 'amy.jpeg',
+          icon: 'fa-linkedin'
+        %>
+        <%= render 'blurb',
+          name: 'Allison Sugino',
+          online_presence: 'https://www.linkedin.com/in/allison-sugino',
+          title: 'Social Media Coordinator',
+          blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
+          ".html_safe,
+          image: 'allison.png',
+          icon: 'fa-linkedin'
+        %>
+      </div>
+    </div>
+  </div>
   <hr />
   <br />
   <h3>
     Partner Institutions
   </h3>
-  <div class="col-12">
-    <a href="https://greekandromanstudies.vassar.edu/"target="_blank">
-      <img src="<%= asset_path 'vassar.png' %>" class="institution" />
-    </a>
+  <div class="row">
+    <div class="col-6">
+      <a href="https://greekandromanstudies.vassar.edu/"target="_blank">
+        <img src="<%= asset_path 'vassar.png' %>" class="institution" />
+      </a>
+    </div>
+    <div class="col-6">
+      <a href="https://classicalstudies.org/"target="_blank">
+        <img src="<%= asset_path 'scs.jpg' %>" class="institution" />
+      </a>
+    </div>
   </div>
   <br />
 </div>

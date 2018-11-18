@@ -1,19 +1,17 @@
-<li>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="<%= asset_path image %>" alt="<%= name %>">
-    </div>
-    <div class="col-sm-8">
-      <h4>
+<div class="card">
+  <a href="<%= online_presence %>" target="_blank">
+    <img class="card-img-top staff" src="<%= asset_path image %>" alt="<%= name %>" />
+    <div class="card-body">
+      <h5 class="card-title">
         <%= name %>
         <br />
         <small>
           <%= title %>
         </small>
-      </h4>
-      <p>
-        <%= blurb_content %>
-      </p>
+      </h5>
     </div>
-  </div>
-</li>
+  </a>
+</div>
+<!-- <p>
+  </% blurb_content %>
+</p> -->

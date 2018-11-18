@@ -10,18 +10,26 @@ div.about-body {
   padding: 8px;
 }
 
-ul.brain-trust {
+div.card-deck#editorial-staff {
+  
+}
+
+img.card-img-top.staff {
+  max-width: 200px;
+}
+
+
+// PAST CONTRIBUTORS-----------------------------------------------------------
+#past-contributors {
   list-style: none;
-  padding: 0px;
-  li {
-    margin-bottom: 8px;
-    padding: 8px;
-    background-color: white;
-    img {
-      width: 100%;
-      max-width: 300px;
-    }
+  padding: 0px 18%;
+  div.contributor {
+    display: inline-block;
   }
+}
+
+img.contributor {
+  max-width: 150px;
 }
 
 div#about-page, div#methodology {
