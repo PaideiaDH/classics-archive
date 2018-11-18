@@ -14,14 +14,24 @@
   }
 }
 
-#about-body {
+#about-body, div.modal.fade.about {
   text-align: left;
   padding: 32px;
+  a.stinkedin, i {
+    color: $paideia-orange !important;
+  }
+  .modal-header {
+    border-bottom: 0px !important;
+  }
+  .modal-content {
+    border-radius: 0px !important;
+  }
 }
 
 #past-contributors {
   padding: 8px !important;
 }
+
 
 img.card-img-top.staff {
   max-width: 200px;

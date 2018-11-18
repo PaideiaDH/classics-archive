@@ -1,5 +1,5 @@
 <div class="card">
-  <a href="<%= online_presence %>" target="_blank">
+  <a href="#" data-toggle="modal" data-target="#<%= image.split(".")[0] %>Modal">
     <img class="card-img-top staff" src="<%= asset_path image %>" alt="<%= name %>" />
     <div class="card-body">
       <h5 class="card-title">
@@ -12,6 +12,34 @@
     </div>
   </a>
 </div>
+<div class="modal fade about" id="<%= image.split(".")[0] %>Modal" tabindex="-1" role="dialog" aria-labelledby="#<%= image.split(".")[0] %>Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= image.split(".")[0] %>Label">
+          <%= name %>
+          &nbsp
+          <small>
+            <em><%= title %></em>
+          </small>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%= blurb_content %>
+          &nbsp &nbsp
+          <a href="<%= online_presence %>" target="_blank" class="stinkedin">
+            <i class="fa <%= icon %>" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <p>
-  </% blurb_content %>
+
+
 </p> -->
