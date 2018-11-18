@@ -23,7 +23,7 @@
       Editorial Staff
     </h3>
     <div class="row brain-trust">
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-12 col-md-4">
         <%= render 'blurb',
           name: 'Leah Clark',
           online_presence: 'https://www.linkedin.com/in/leah-c-2293409b/',
@@ -34,7 +34,7 @@
           icon: 'fa-linkedin'
         %>
       </div>
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-12 col-md-4">
         <%= render 'blurb',
           name: 'Marco Romani Mistretta',
           online_presence: 'https://www.paideiainstitute.org/institute_staff',
@@ -45,7 +45,7 @@
           icon: 'fa-linkedin'
         %>
       </div>
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-12 col-md-4">
         <%= render 'blurb',
           name: 'Jason Pedicone',
           online_presence: 'https://www.linkedin.com/in/jason-pedicone-16aa8877/',
@@ -55,7 +55,7 @@
           icon: 'fa-linkedin'
         %>
       </div>
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-12 col-md-6">
         <%= render 'blurb',
           name: 'Ariane Schwartz',
           online_presence: 'https://www.linkedin.com/in/ariane-schwartz-151262b7',
@@ -66,11 +66,22 @@
           icon: 'fa-linkedin'
         %>
       </div>
+      <div class="col-md-6 col-sm-12">
+        <%= render 'blurb',
+          name: 'Allison Sugino',
+          online_presence: 'https://www.linkedin.com/in/allison-sugino',
+          title: 'Social Media Coordinator',
+          blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
+          ".html_safe,
+          image: 'allison.png',
+          icon: 'fa-linkedin'
+        %>
+      </div>
     </div>
   </div>
   <br />
   <div class="row container">
-    <div class="col-md-4 col-sm-12" id="website">
+    <div class="col-md-6 col-sm-12" id="website">
       <h3>
         Website
       </h3>
@@ -85,33 +96,19 @@
         %>
       </div>
     </div>
-    <div class="col-md-1 col-sm-12"></div>
-    <div class="col-md-7 col-sm-12" id="past-contributors">
+    <div class="col-md-6 col-sm-12" id="past-contributors">
       <h3>
         Past Contributors
       </h3>
-      <div class="row brain-trust">
-        <div class="col-md-6 col-sm-12">
-          <%= render 'blurb',
-            name: 'Amy Garland',
-            online_presence: 'https://www.linkedin.com/in/amy-garland-4835b865o',
-            title: 'Editorial Staff',
-            blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
-            image: 'amy.jpeg',
-            icon: 'fa-linkedin'
-          %>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <%= render 'blurb',
-            name: 'Allison Sugino',
-            online_presence: 'https://www.linkedin.com/in/allison-sugino',
-            title: 'Social Media Coordinator',
-            blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
-            ".html_safe,
-            image: 'allison.png',
-            icon: 'fa-linkedin'
-          %>
-        </div>
+      <div class="brain-trust">
+        <%= render 'blurb',
+          name: 'Amy Garland',
+          online_presence: 'https://www.linkedin.com/in/amy-garland-4835b865o',
+          title: 'Editorial Staff',
+          blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
+          image: 'amy.jpeg',
+          icon: 'fa-linkedin'
+        %>
       </div>
     </div>
   </div>

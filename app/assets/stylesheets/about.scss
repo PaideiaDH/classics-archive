@@ -28,11 +28,6 @@
   }
 }
 
-#past-contributors {
-  padding: 8px !important;
-}
-
-
 img.card-img-top.staff {
   max-width: 200px;
   border-radius: 50% !important;
@@ -40,16 +35,7 @@ img.card-img-top.staff {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 // PAST CONTRIBUTORS-----------------------------------------------------------
-#past-contributors {
-  list-style: none;
-  padding: 0px 18%;
-  div.contributor {
-    display: inline-block;
-  }
-}
-
 img.contributor {
   max-width: 150px;
 }
