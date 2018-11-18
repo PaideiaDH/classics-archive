@@ -5,17 +5,29 @@
   background-color: white;
 }
 
-div.about-body {
-  background-color: white;
-  padding: 8px;
+#editorial-staff, #website, #past-contributors, #about-body, #partner-institutions  {
+  background-color: $paideia-card-grey;
+  padding: 16px 8px;
+  text-align: center;
+  .card {
+    background-color: $paideia-card-grey !important;
+  }
 }
 
-div.card-deck#editorial-staff {
-  
+#about-body {
+  text-align: left;
+  padding: 32px;
+}
+
+#past-contributors {
+  padding: 8px !important;
 }
 
 img.card-img-top.staff {
   max-width: 200px;
+  border-radius: 50% !important;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 

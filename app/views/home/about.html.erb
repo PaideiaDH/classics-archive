@@ -1,9 +1,9 @@
 <div class="container container-fluid" id="about-page">
   <br />
-  <h3>
-    Introduction
-  </h3>
-  <div class="about-body">
+  <div id="about-body">
+    <h3>
+      Introduction
+    </h3>
     <p>
       Classics has had a strong presence in the press. As Hardwick and Harrison (2013) remark, “Greek and Roman texts, material culture and ideas have always been widely and radically used and re-used by individuals and by societies, and in recent centuries this has gradually included more people who have not had a formal classical education of any kind.” More recently, popular culture and the media have engaged with antiquity for centuries (cf. Jenkins 2015), yet it is currently difficult to search for and document the places where that engagement takes place. One can Google  “Plato and Trump” or “Xenophon and leadership”, but the search results can often be too unwieldy and lacunose to be of much productive use.
     </p>
@@ -17,56 +17,65 @@
       The Online Public Classics Archive collects articles from across the internet and from a variety of media sources.  The views expressed in these media are those of the authors and their publishers, and are not endorsed in any way by the Paideia Institute.  However, the Paideia Institute Institute strongly condemns hateful language or attitudes directed at individuals or groups based upon their nationality, race, gender, religion, or sexual orientation.  We welcome anyone with an interest in ancient Greece and Rome, and strive to create a learning environment in which individuals can pursue that interest without being demeaned or attacked for who they are.  As a result, articles which use the Classics to attack individuals or groups for their identity or beliefs are not included in the archive.
     </p>
   </div>
-  <hr />
   <br />
-  <h3>
-    Editorial Staff
-  </h3>
-  <div class="card-deck brain-trust" id="editorial-staff">
-    <%= render 'blurb',
-      name: 'Marco Romani Mistretta',
-      online_presence: 'https://www.paideiainstitute.org/institute_staff',
-      title: 'Editor in Chief',
-      blurb_content: "Before joining the Paideia Institute, Marco Romani Mistretta received a PhD in Classical Philology from Harvard University. At Paideia, his main duties include managing Aequora and the Legion Project, developing curricular materials, and co-supervising the Institute’s Summer Humanities Internship. As a classicist, he has taught a number of courses on ancient languages, literature, and philosophy. He has also published research articles on science and technology in the ancient world, as well as on the history of Classical scholarship in modern Europe.
-      ".html_safe,
-      image: 'marco.jpeg',
-      icon: 'fa-linkedin'
-    %>
-    <%= render 'blurb',
-      name: 'Leah Clark',
-      online_presence: 'https://www.linkedin.com/in/leah-c-2293409b/',
-      title: 'Editor',
-      blurb_content: "Leah is a senior Greek and Roman Studies major at Vassar College, and is originally from Tuscaloosa, Alabama. This year she is working as the department's Latin Intern, as well as working on her thesis on film adaptations of the Odyssey that take place in the American south.
-      ".html_safe,
-      image: 'leah.jpeg',
-      icon: 'fa-linkedin'
-    %>
-    <%= render 'blurb',
-      name: 'Jason Pedicone',
-      online_presence: 'https://www.linkedin.com/in/jason-pedicone-16aa8877/',
-      title: 'Project Manager',
-      blurb_content: 'Jason Pedicone, the co-founder and President of the Paideia Institute, received his Ph.D. in Classics from Princeton University in 2013. Jason has taught courses in Latin, Greek, and the history of Classical Scholarship at the university level in the U.S. and Western Europe, and is an adjunct professor at Brooklyn College and Fordham University. Jason’s research and public speaking focus on public humanities and Latin and Greek pedagogy. Jason received a Fulbright Fellowship for research in Germany in 2004, and a Jacob Javits Fellowship in 2013 to support his graduate work.  In 2015, together with Paideia\'s co-founder, Eric Hewett, Jason was awarded the President’s Award by the Society for Classical Studies for outstanding achievements in promoting the study of Classics. He lives in Manhattan.',
-      image: 'jason.jpg',
-      icon: 'fa-linkedin'
-    %>
-    <%= render 'blurb',
-      name: 'Ariane Schwartz',
-      online_presence: 'https://www.linkedin.com/in/ariane-schwartz-151262b7',
-      title: 'Adviser',
-      blurb_content: "Ariane Schwartz works​ ​in education and management consulting​.​ She taught for several years at Dartmouth, UCLA, and Harvard. She is also Assistant Editor for the I Tatti Renaissance Library. She has co-founded the Society for Early Modern Classical Reception (a Society for Classical Studies affiliate group) and has been involved in several digital humanities initiatives, including <a href='https://qcrit.org/home' target='_blank'>Quantitative Criticism Lab</a> and the OPCA. She received her B.A. and M.A. in Classical Studies from the University of Pennsylvania and Ph.D. in Classical Philology from Harvard University.
-      ".html_safe,
-      image: 'ariane.jpg',
-      icon: 'fa-linkedin'
-    %>
+  <div id="editorial-staff">
+    <h3>
+      Editorial Staff
+    </h3>
+    <div class="row brain-trust">
+      <div class="col-sm-12 col-md-3">
+        <%= render 'blurb',
+          name: 'Marco Romani Mistretta',
+          online_presence: 'https://www.paideiainstitute.org/institute_staff',
+          title: 'Editor in Chief',
+          blurb_content: "Before joining the Paideia Institute, Marco Romani Mistretta received a PhD in Classical Philology from Harvard University. At Paideia, his main duties include managing Aequora and the Legion Project, developing curricular materials, and co-supervising the Institute’s Summer Humanities Internship. As a classicist, he has taught a number of courses on ancient languages, literature, and philosophy. He has also published research articles on science and technology in the ancient world, as well as on the history of Classical scholarship in modern Europe.
+          ".html_safe,
+          image: 'marco.jpeg',
+          icon: 'fa-linkedin'
+        %>
+      </div>
+      <div class="col-sm-12 col-md-3">
+
+        <%= render 'blurb',
+          name: 'Leah Clark',
+          online_presence: 'https://www.linkedin.com/in/leah-c-2293409b/',
+          title: 'Editor',
+          blurb_content: "Leah is a senior Greek and Roman Studies major at Vassar College, and is originally from Tuscaloosa, Alabama. This year she is working as the department's Latin Intern, as well as working on her thesis on film adaptations of the Odyssey that take place in the American south.
+          ".html_safe,
+          image: 'leah.jpeg',
+          icon: 'fa-linkedin'
+        %>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <%= render 'blurb',
+          name: 'Jason Pedicone',
+          online_presence: 'https://www.linkedin.com/in/jason-pedicone-16aa8877/',
+          title: 'Project Manager',
+          blurb_content: 'Jason Pedicone, the co-founder and President of the Paideia Institute, received his Ph.D. in Classics from Princeton University in 2013. Jason has taught courses in Latin, Greek, and the history of Classical Scholarship at the university level in the U.S. and Western Europe, and is an adjunct professor at Brooklyn College and Fordham University. Jason’s research and public speaking focus on public humanities and Latin and Greek pedagogy. Jason received a Fulbright Fellowship for research in Germany in 2004, and a Jacob Javits Fellowship in 2013 to support his graduate work.  In 2015, together with Paideia\'s co-founder, Eric Hewett, Jason was awarded the President’s Award by the Society for Classical Studies for outstanding achievements in promoting the study of Classics. He lives in Manhattan.',
+          image: 'jason.jpg',
+          icon: 'fa-linkedin'
+        %>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <%= render 'blurb',
+          name: 'Ariane Schwartz',
+          online_presence: 'https://www.linkedin.com/in/ariane-schwartz-151262b7',
+          title: 'Adviser',
+          blurb_content: "Ariane Schwartz works​ ​in education and management consulting​.​ She taught for several years at Dartmouth, UCLA, and Harvard. She is also Assistant Editor for the I Tatti Renaissance Library. She has co-founded the Society for Early Modern Classical Reception (a Society for Classical Studies affiliate group) and has been involved in several digital humanities initiatives, including <a href='https://qcrit.org/home' target='_blank'>Quantitative Criticism Lab</a> and the OPCA. She received her B.A. and M.A. in Classical Studies from the University of Pennsylvania and Ph.D. in Classical Philology from Harvard University.
+          ".html_safe,
+          image: 'ariane.jpg',
+          icon: 'fa-linkedin'
+        %>
+      </div>
+    </div>
   </div>
-  <hr />
   <br />
-  <div class="row">
-    <div class="col-4">
+  <div class="row container">
+    <div class="col-md-4 col-sm-12" id="website">
       <h3>
         Website
       </h3>
-      <div class="card-deck brain-trust">
+      <div class="brain-trust">
         <%= render 'blurb',
           name: 'Kamille Delgardo',
           online_presence: 'http://www.kamille.delgardo.co',
@@ -77,46 +86,54 @@
         %>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-md-1 col-sm-12"></div>
+    <div class="col-md-7 col-sm-12" id="past-contributors">
       <h3>
         Past Contributors
       </h3>
-      <div class="card-deck" id="past-contributors">
-        <%= render 'blurb',
-          name: 'Amy Garland',
-          online_presence: 'https://www.linkedin.com/in/amy-garland-4835b865o',
-          title: 'Editorial Staff',
-          blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
-          image: 'amy.jpeg',
-          icon: 'fa-linkedin'
-        %>
-        <%= render 'blurb',
-          name: 'Allison Sugino',
-          online_presence: 'https://www.linkedin.com/in/allison-sugino',
-          title: 'Social Media Coordinator',
-          blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
-          ".html_safe,
-          image: 'allison.png',
-          icon: 'fa-linkedin'
-        %>
+      <div class="row brain-trust">
+        <div class="col-md-6 col-sm-12">
+          <%= render 'blurb',
+            name: 'Amy Garland',
+            online_presence: 'https://www.linkedin.com/in/amy-garland-4835b865o',
+            title: 'Editorial Staff',
+            blurb_content: "Amy is a Program Manager for Paideia as well as a former Rome Fellow (2014-2015). She has an M.St. in Ancient Philosophy from the University of Oxford and an A.B. in Classics from Princeton University. She is an alumna of Paideia's very first program, Living Latin in Rome, 2011. She has taught as an assistant faculty member and also been Logistical Director for the Living Latin in Rome (High School) program. Based in the NYC office, she works on development, outreach, digital publications, and programs for Paideia.",
+            image: 'amy.jpeg',
+            icon: 'fa-linkedin'
+          %>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <%= render 'blurb',
+            name: 'Allison Sugino',
+            online_presence: 'https://www.linkedin.com/in/allison-sugino',
+            title: 'Social Media Coordinator',
+            blurb_content: "Allison is a senior pursuing her B.A. in Greek and Roman Studies from Vassar College where she is currently a Research Assistant for the Greek and Roman Studies Department. She is an alumna of the Paideia Institute's 2017 Living Latin in Rome program. When not studying Roman narratives of sexual assault for her thesis, she loves to expand her academic horizons through her work with the OPCA, the podcast <a href='https://www.facebook.com/mirrorantiquity/' target='_blank'>The Mirror of Antiquity</a>, and faculty research projects. She aspires to pursue a career where she can continue to spread the love of learning. Outside of the library, she can be found boxing or performing with Vassar Repertory Dance Theatre.
+            ".html_safe,
+            image: 'allison.png',
+            icon: 'fa-linkedin'
+          %>
+        </div>
       </div>
     </div>
   </div>
-  <hr />
   <br />
-  <h3>
-    Partner Institutions
-  </h3>
-  <div class="row">
-    <div class="col-6">
-      <a href="https://greekandromanstudies.vassar.edu/"target="_blank">
-        <img src="<%= asset_path 'vassar.png' %>" class="institution" />
-      </a>
-    </div>
-    <div class="col-6">
-      <a href="https://classicalstudies.org/"target="_blank">
-        <img src="<%= asset_path 'scs.jpg' %>" class="institution" />
-      </a>
+  <div id="partner-institutions">
+    <h3>
+      Partner Institutions
+      &nbsp
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+    </h3>
+    <div class="row">
+      <div class="col-6">
+        <a href="https://greekandromanstudies.vassar.edu/"target="_blank">
+          <img src="<%= asset_path 'vassar.png' %>" class="institution" />
+        </a>
+      </div>
+      <div class="col-6">
+        <a href="https://classicalstudies.org/"target="_blank">
+          <img src="<%= asset_path 'scs.jpg' %>" class="institution" />
+        </a>
+      </div>
     </div>
   </div>
   <br />
