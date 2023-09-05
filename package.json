@@ -6,7 +6,7 @@
   "author": "Kamille Delgardo <kamilledelgardo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@rails/webpacker": "^3.0.1",
+    "@rails/webpacker": "^5.4.4",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
